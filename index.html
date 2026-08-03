@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Amar Fauzie | Data Scientist & ML Engineer</title>
+    <meta name="description" content="Data Scientist specializing in NLP, RAG systems, and MLOps. Building intelligent systems with Python, LLMs, and modern ML infrastructure.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #fafafa;
+            --border: #e5e5e5;
+            --text: #171717;
+            --text-muted: #737373;
+            --text-subtle: #a3a3a3;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --code-bg: #f5f5f5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --surface: #171717;
+                --border: #262626;
+                --text: #fafafa;
+                --text-muted: #a3a3a3;
+                --text-subtle: #525252;
+                --accent: #3b82f6;
+                --accent-hover: #60a5fa;
+                --code-bg: #262626;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        header {
+            margin-bottom: 64px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .bio {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        .project {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            gap: 16px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .project-status {
+            font-size: 13px;
+            color: var(--text-subtle);
+            white-space: nowrap;
+        }
+
+        .project-status.wip {
+            color: var(--accent);
+        }
+
+        .project-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tech-tag {
+            font-size: 13px;
+            padding: 4px 10px;
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .project-link {
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .project-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-category h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-subtle);
+            margin-bottom: 12px;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        .skill-list li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            margin-top: 120px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-subtle);
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 48px 20px 80px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Muhammad Amar Fauzie Bin Ismail</h1>
+            <div class="subtitle">Data Scientist | ML Engineer | NLP Specialist</div>
+            <p class="bio">
+                Building intelligent systems with Python, LLMs, and modern ML infrastructure. 
+                Specialized in NLP, RAG systems, Arabic language processing, and end-to-end ML pipelines. 
+                Background in Arabic literature and Islamic theology brings unique perspective to structured analysis and language modeling.
+            </p>
+            <div class="links">
+                <a href="https://github.com/amarpoji" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Featured Projects</h2>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">Diwanic — Arabic Poetry Retrieval System</div>
+                    <div class="project-status">2026</div>
+                </div>
+                <p class="project-desc">
+                    Production-ready Arabic poetry search engine with hybrid retrieval (semantic + keyword BM25). 
+                    Scraped and indexed thousands of classical Arabic poems with metadata (poet, era, meter, rhyme). 
+                    Built with Prefect orchestration, Qdrant vector store, and FastAPI. Implements advanced Arabic NLP preprocessing 
+                    and multilingual embeddings (BAAI/bge-m3).
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Qdrant</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Prefect</span>
+                    <span class="tech-tag">Arabic NLP</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/amarpoji/Diwanic" class="project-link" target="_blank">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">AI Fraud Detection System</div>
+                    <div class="project-status">2026</div>
+                </div>
+                <p class="project-desc">
+                    Full-stack ML fraud detection system with end-to-end pipeline. Features DVC for model versioning, 
+                    MLflow for experiment tracking, Docker deployment, and React frontend. Implements real-time inference 
+                    with model monitoring and drift detection.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">DVC</span>
+                    <span class="tech-tag">MLflow</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Streamlit</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/amarpoji/ai-fraud-detector" class="project-link" target="_blank">View Repository →</a>
+                    <a href="https://github.com/amarpoji/ai-fraud-detector-streamlit" class="project-link" target="_blank">Streamlit App →</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">Simple RAG System</div>
+                    <div class="project-status">2026</div>
+                </div>
+                <p class="project-desc">
+                    Local RAG system with OpenSearch vector store, LLM integration, OCR capabilities, and Streamlit interface. 
+                    Demonstrates retrieval-augmented generation with document chunking, embedding generation, 
+                    and context-aware question answering.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenSearch</span>
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">OCR</span>
+                    <span class="tech-tag">RAG</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" class="project-link" target="_blank">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">HadithGraph</div>
+                    <div class="project-status wip">Work in Progress</div>
+                </div>
+                <p class="project-desc">
+                    Graph-based Hadith knowledge system using Microsoft GraphRAG. Building a semantic knowledge graph 
+                    of Islamic Hadith literature with entity extraction, relationship mapping, and intelligent retrieval 
+                    for religious scholarship research.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">GraphRAG</span>
+                    <span class="tech-tag">Knowledge Graphs</span>
+                    <span class="tech-tag">Arabic NLP</span>
+                    <span class="tech-tag">LLMs</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">ML Pipeline with DVC</div>
+                    <div class="project-status">2026</div>
+                </div>
+                <p class="project-desc">
+                    Reproducible machine learning pipeline using DVC for data and model versioning. 
+                    Demonstrates MLOps best practices with pipeline automation, experiment tracking, 
+                    and version control for datasets and models.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">DVC</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">MLOps</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/amarpoji/machine_learning_pipeline-" class="project-link" target="_blank">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">End-to-End ML Regression Project</div>
+                    <div class="project-status">2026</div>
+                </div>
+                <p class="project-desc">
+                    Complete ML project lifecycle from data collection to deployment and monitoring. 
+                    Implements regression modeling with feature engineering, model selection, evaluation metrics, 
+                    and production deployment patterns.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">pandas</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" class="project-link" target="_blank">View Repository →</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>ML/AI</h3>
+                    <ul class="skill-list">
+                        <li>NLP & LLMs</li>
+                        <li>RAG Systems</li>
+                        <li>scikit-learn</li>
+                        <li>LangChain</li>
+                        <li>Arabic NLP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>MLOps</h3>
+                    <ul class="skill-list">
+                        <li>DVC</li>
+                        <li>MLflow</li>
+                        <li>Docker</li>
+                        <li>Prefect</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Infra</h3>
+                    <ul class="skill-list">
+                        <li>PostgreSQL</li>
+                        <li>Qdrant</li>
+                        <li>OpenSearch</li>
+                        <li>FastAPI</li>
+                        <li>Streamlit</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built with passion for ML engineering and Arabic NLP • 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
