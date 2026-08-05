@@ -11,211 +11,214 @@
 	<meta name="description" content="Data Scientist & AI Engineer specializing in NLP, RAG systems, multi-agent AI, and MLOps." />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Source+Sans+Pro:wght@300;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Source+Sans+Pro:wght@300;600;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 	<style>
-		/* ============ MASSIVELY TOKENS ============ */
+		/* ============ MASSIVELY TOKENS (from template _vars.scss) ============ */
 		:root {
-			--accent: #18bfef;          /* cyan */
-			--accent-dark: #0f9cc7;
-			--bg: #1e252d;              /* dark charcoal */
-			--bg-alt: #141920;          /* darker panel */
-			--bg-input: rgba(255,255,255,0.075);
-			--fg: #d6dbe0;              /* body text */
-			--fg-bold: #ffffff;         /* headings */
-			--fg-light: rgba(255,255,255,0.45);
-			--border: rgba(255,255,255,0.2);
-			--border-light: rgba(255,255,255,0.1);
+			--wrapper-bg: #212931;
+			--intro-bg: #1e252d;
+			--bg: #ffffff;
+			--fg: #212931;
+			--fg-bold: #212931;
+			--fg-light: #717981;
+			--border: #eeeeee;
+			--border-bg: rgba(220, 220, 220, 0.25);
+			--accent: #18bfef;
 			--serif: 'Merriweather', Georgia, serif;
-			--sans: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+			--sans: 'Source Sans Pro', Helvetica, sans-serif;
 			--arabic: 'Amiri', serif;
 		}
 
 		/* ============ RESET / BASE ============ */
 		*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-		html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+		html { scroll-behavior: smooth; }
 		body {
 			font-family: var(--serif);
-			font-size: 15px;
-			font-weight: 300;
-			line-height: 2;
-			color: var(--fg);
-			background: var(--bg);
-			-webkit-font-smoothing: antialiased;
-			overflow-x: hidden;
+			font-size: 1rem; font-weight: 300; line-height: 2;
+			color: var(--fg); background: var(--wrapper-bg);
+			-webkit-font-smoothing: antialiased; overflow-x: hidden;
 		}
-		a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--fg-light); transition: color 0.2s, border-color 0.2s; }
+		a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(33,41,49,0.4); transition: color 0.2s, border-color 0.2s; }
 		a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 		ul { list-style: none; }
 		img { max-width: 100%; }
 		::selection { background: var(--accent); color: #fff; }
 
 		h1, h2, h3, h4 {
-			color: var(--fg-bold);
-			font-family: var(--sans);
-			font-weight: 300;
-			line-height: 1.3;
-			letter-spacing: 0.06em;
-			margin: 0 0 1rem 0;
+			color: var(--fg-bold); font-family: var(--sans);
+			font-weight: 900; line-height: 1.3; letter-spacing: 0.03em; margin: 0 0 1rem 0;
 		}
-		h2 { font-size: 2.1rem; }
-		h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: 0.03em; }
+		h2 { font-size: 1.8rem; }
+		h3 { font-size: 1.15rem; font-weight: 600; }
 
-		#wrapper { max-width: 100%; }
+		/* ============ INTRO (dark starfield screen) ============ */
+		#intro {
+			position: relative; min-height: 100vh; display: flex; flex-direction: column;
+			align-items: center; justify-content: center; text-align: center;
+			padding: 4rem 2rem; background-color: var(--intro-bg); overflow: hidden;
+		}
+		#intro::before { /* starfield */
+			content: ''; position: absolute; inset: 0;
+			background-image:
+				radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,0.9) 50%, transparent 51%),
+				radial-gradient(1px 1px at 28% 64%, rgba(255,255,255,0.6) 50%, transparent 51%),
+				radial-gradient(1.5px 1.5px at 37% 12%, rgba(255,255,255,0.8) 50%, transparent 51%),
+				radial-gradient(1px 1px at 46% 78%, rgba(255,255,255,0.5) 50%, transparent 51%),
+				radial-gradient(1.5px 1.5px at 55% 33%, rgba(255,255,255,0.85) 50%, transparent 51%),
+				radial-gradient(1px 1px at 63% 85%, rgba(255,255,255,0.55) 50%, transparent 51%),
+				radial-gradient(1.5px 1.5px at 71% 18%, rgba(255,255,255,0.75) 50%, transparent 51%),
+				radial-gradient(1px 1px at 79% 52%, rgba(255,255,255,0.6) 50%, transparent 51%),
+				radial-gradient(1px 1px at 86% 8%, rgba(255,255,255,0.7) 50%, transparent 51%),
+				radial-gradient(1.5px 1.5px at 92% 66%, rgba(255,255,255,0.5) 50%, transparent 51%),
+				radial-gradient(1px 1px at 6% 48%, rgba(255,255,255,0.5) 50%, transparent 51%),
+				radial-gradient(1.5px 1.5px at 18% 88%, rgba(255,255,255,0.6) 50%, transparent 51%),
+				radial-gradient(1px 1px at 32% 40%, rgba(255,255,255,0.45) 50%, transparent 51%),
+				radial-gradient(1px 1px at 68% 47%, rgba(255,255,255,0.45) 50%, transparent 51%),
+				radial-gradient(1px 1px at 94% 35%, rgba(255,255,255,0.55) 50%, transparent 51%),
+				radial-gradient(1.5px 1.5px at 48% 95%, rgba(255,255,255,0.4) 50%, transparent 51%),
+				radial-gradient(1px 1px at 8% 72%, rgba(255,255,255,0.4) 50%, transparent 51%),
+				radial-gradient(1px 1px at 82% 92%, rgba(255,255,255,0.4) 50%, transparent 51%);
+			opacity: 0.8;
+		}
+		#intro::after { /* bottom fade into content + vignette */
+			content: ''; position: absolute; inset: 0;
+			background: linear-gradient(to bottom, rgba(30,37,45,0.25) 0%, rgba(30,37,45,0.55) 70%, var(--wrapper-bg) 100%);
+		}
+		#intro .intro-inner { position: relative; z-index: 2; }
+		#intro .arabic-badge {
+			font-family: var(--arabic); font-size: 1.9rem; color: var(--accent);
+			display: inline-block; margin-bottom: 2rem; text-shadow: 0 0 1.5em rgba(24,191,239,0.6);
+		}
+		#intro h1 {
+			color: #fff; font-size: clamp(3.2rem, 11vw, 6.5rem); font-weight: 900;
+			text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.1;
+			margin-bottom: 1rem; text-shadow: 0 0.05em 1.2em rgba(0,0,0,0.8);
+		}
+		#intro h1 .accent { color: var(--accent); }
+		#intro p {
+			color: rgba(255,255,255,0.75); max-width: 38em; margin: 0 auto 2.6rem auto;
+			font-size: 0.95rem;
+		}
+		#intro p b { color: #fff; font-weight: 400; }
 
-		/* ============ TOP BAR ============ */
-		#topbar {
-			position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-			height: 4.2rem; display: flex; align-items: center; justify-content: space-between;
-			padding: 0 2rem; background: var(--bg);
-			border-bottom: 1px solid var(--border-light);
-			backdrop-filter: blur(8px);
+		/* ============ BUTTONS ============ */
+		ul.actions { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+		ul.actions.special { justify-content: center; }
+		.button {
+			display: inline-block; height: 3em; line-height: 2.7em; padding: 0 2.4em;
+			font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+			letter-spacing: 0.2em; text-transform: uppercase; border-radius: 0.25em;
+			border: 2px solid var(--fg); color: var(--fg); background: transparent;
+			cursor: pointer; transition: all 0.25s; border-bottom: 2px solid var(--fg);
 		}
-		#topbar .tb-left { font-size: 0.8rem; color: var(--fg-light); letter-spacing: 0.08em; }
-		#topbar .tb-logo { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.18em; color: var(--fg-bold); border-bottom: 0; }
-		#topbar .tb-logo span { color: var(--accent); }
-		#topbar .tb-right { display: flex; align-items: center; gap: 0.7rem; }
-		#topbar .tb-icon {
-			width: 2.3rem; height: 2.3rem; border-radius: 50%;
-			border: 1px solid var(--border); display: grid; place-items: center;
-			font-size: 0.85rem; color: var(--fg); transition: all 0.2s; background: transparent;
+		.button:hover { border-color: var(--accent); color: var(--accent); }
+		.button.large { height: 3.4em; line-height: 3.1em; padding: 0 3em; }
+		.button.primary { background: var(--fg); color: #fff; border-color: var(--fg); }
+		.button.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+		.button.accent { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 0.4em 1.4em rgba(24,191,239,0.3); }
+		.button.accent:hover { background: #0f9cc7; border-color: #0f9cc7; color: #fff; }
+		.button.small { height: 2.7em; line-height: 2.4em; padding: 0 1.8em; font-size: 0.72rem; }
+		.button.solo {
+			width: 3.6em; height: 3.6em; padding: 0; line-height: 3.4em; border-radius: 50%;
+			border: 2px solid #fff; color: #fff; font-size: 1rem; display: inline-grid; place-items: center;
 		}
-		#topbar .tb-icon:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+		.button.solo:hover { border-color: var(--accent); color: var(--accent); }
+
+		/* ============ CONTENT WRAPPER (white area) ============ */
+		#content-wrap { max-width: 72rem; margin: 0 auto; background: var(--bg); }
+
+		/* ============ HEADER LOGO BAR ============ */
+		#header {
+			text-align: center; padding: 2.2rem 2rem; background: var(--bg);
+			border-bottom: 1px solid var(--border);
+		}
+		#header .logo {
+			display: inline-block; font-family: var(--sans); font-weight: 900;
+			font-size: 1.35rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fg);
+			border: 2px solid var(--fg); padding: 0.6em 1.6em; transition: all 0.25s;
+		}
+		#header .logo:hover { border-color: var(--accent); color: var(--accent); }
+		#header .logo span { color: var(--accent); }
+
+		/* ============ NAV ============ */
+		#nav {
+			background: var(--bg); border-top: 2px solid var(--fg); border-bottom: 2px solid var(--fg);
+			position: sticky; top: 0; z-index: 999; display: flex; align-items: center;
+			justify-content: space-between; padding: 0 2rem; min-height: 4.6rem;
+			box-shadow: 0 0.15em 0.6em rgba(0,0,0,0.08);
+		}
+		#nav ul.links { display: flex; gap: 2.2rem; }
+		#nav ul.links a {
+			font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+			letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg); border-bottom: 0;
+			padding: 0.4em 0; transition: color 0.2s;
+		}
+		#nav ul.links a:hover, #nav ul.links a.active { color: var(--accent); }
+		#nav ul.icons { display: flex; gap: 0.5rem; }
+		#nav ul.icons a {
+			width: 2.6em; height: 2.6em; border-radius: 50%; border: 1px solid var(--border);
+			display: grid; place-items: center; font-size: 0.85rem; color: var(--fg);
+			transition: all 0.2s; border-bottom: 1px solid var(--border);
+		}
+		#nav ul.icons a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 		#menuBtn {
-			display: none; border: 1px solid var(--border); background: transparent; color: var(--fg);
-			font-family: var(--sans); font-weight: 600; font-size: 0.75rem;
-			letter-spacing: 0.25em; text-transform: uppercase;
-			padding: 0.85em 1.6em; cursor: pointer; border-radius: 0.3em; transition: all 0.2s;
+			display: none; border: 1px solid var(--fg); background: transparent; color: var(--fg);
+			font-family: var(--sans); font-weight: 600; font-size: 0.72rem;
+			letter-spacing: 0.22em; text-transform: uppercase; padding: 0.8em 1.5em; cursor: pointer;
+			border-radius: 0.25em;
 		}
 		#menuBtn:hover { border-color: var(--accent); color: var(--accent); }
-
-		/* ============ NAV (desktop inline / mobile overlay) ============ */
-		#nav { display: flex; gap: 1.6rem; }
-		#nav a {
-			font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
-			letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg);
-			border-bottom: 0; padding: 0.35em 0; transition: color 0.2s;
-		}
-		#nav a:hover, #nav a.active { color: var(--accent); }
 		#navOverlay {
-			position: fixed; inset: 0; z-index: 999; background: var(--bg-alt);
+			position: fixed; inset: 0; z-index: 1000; background: var(--wrapper-bg);
 			display: none; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem;
 		}
 		#navOverlay.open { display: flex; }
 		#navOverlay a {
-			font-family: var(--sans); font-size: 1.15rem; font-weight: 600;
-			letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-bold); border-bottom: 0;
+			font-family: var(--sans); font-size: 1.1rem; font-weight: 600;
+			letter-spacing: 0.22em; text-transform: uppercase; color: #fff; border-bottom: 0;
 		}
 		#navOverlay a:hover, #navOverlay a.active { color: var(--accent); }
-		#navOverlay .close {
-			position: absolute; top: 1.6rem; right: 2rem; font-size: 1.6rem; color: var(--fg); cursor: pointer; border-bottom: 0;
-		}
-
-		/* ============ HERO (giant title) ============ */
-		#header {
-			text-align: center; padding: 11rem 2rem 5rem 2rem;
-			position: relative; min-height: 92vh; display: flex; flex-direction: column;
-			justify-content: center; align-items: center;
-		}
-		#header::before {
-			content: ''; position: absolute; inset: 0; opacity: 0.05; pointer-events: none;
-			background-image: url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2318bfef' stroke-width='1'%3E%3Cpath d='M42 8 L70 28 L61 62 L23 62 L14 28 Z'/%3E%3Cpath d='M42 36 L52 44 L48 58 L36 58 L32 44 Z'/%3E%3C/g%3E%3C/svg%3E");
-		}
-		.hero-badge {
-			display: inline-block; margin-bottom: 2.2rem;
-			font-family: var(--arabic); font-size: 1.7rem; color: var(--accent);
-			border: 1px solid var(--border); border-radius: 0.35em; padding: 0.4em 1.2em;
-			background: rgba(24,191,239,0.06);
-		}
-		.hero-title {
-			font-size: clamp(3.4rem, 11vw, 8.5rem); font-weight: 300;
-			line-height: 1; letter-spacing: 0.02em; text-transform: uppercase;
-			margin-bottom: 0.4em;
-		}
-		.hero-title .thin { font-weight: 300; color: var(--fg-bold); }
-		.hero-title .accent { color: var(--accent); }
-		.hero-sub {
-			font-family: var(--sans); font-size: 1.05rem; font-weight: 300;
-			letter-spacing: 0.32em; text-transform: uppercase; color: var(--fg);
-			margin-bottom: 1.6rem;
-		}
-		.hero-sub b { color: var(--fg-bold); font-weight: 600; }
-		.hero-desc { max-width: 42em; color: var(--fg-light); font-size: 0.95rem; margin-bottom: 2.8rem; }
-
-		/* ============ BUTTONS ============ */
-		ul.actions { display: flex; gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
-		.button {
-			display: inline-block; padding: 0 2.6em; height: 3.4em; line-height: 3.2em;
-			font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
-			letter-spacing: 0.22em; text-transform: uppercase; border-radius: 0.3em;
-			border: 2px solid var(--fg-bold); cursor: pointer; transition: all 0.25s;
-			border-bottom: 2px solid var(--fg-bold); background: transparent; color: var(--fg-bold);
-		}
-		.button:hover { border-color: var(--accent); color: var(--accent); }
-		.button.primary { background: var(--fg-bold); color: var(--bg) !important; border-color: var(--fg-bold); }
-		.button.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; }
-		.button.accent { background: var(--accent); color: #fff !important; border-color: var(--accent); box-shadow: 0 0.4em 1.4em rgba(24,191,239,0.35); }
-		.button.accent:hover { background: #0f9cc7; border-color: #0f9cc7; transform: translateY(-2px); }
-		.button.small { height: 2.9em; line-height: 2.7em; padding: 0 1.9em; font-size: 0.7rem; }
+		#navOverlay .close { position: absolute; top: 1.6rem; right: 2rem; font-size: 1.8rem; color: #fff; cursor: pointer; border-bottom: 0; }
 
 		/* ============ MAIN ============ */
-		#main { max-width: 74em; margin: 0 auto; padding: 0 2rem 4rem 2rem; }
+		#main { padding: 3.5rem 3rem 4rem 3rem; background: var(--bg); }
 
-		/* section headers (Massively bordered treatment) */
-		header.major {
-			border-top: 2px solid var(--border);
-			border-bottom: 2px solid var(--border);
-			text-align: center; padding: 2.6rem 0; margin: 4.5rem 0 3.5rem 0;
+		/* ============ FEATURED POST ============ */
+		.post.featured { text-align: center; margin-bottom: 4rem; }
+		.date {
+			display: block; font-family: var(--sans); font-weight: 600;
+			letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.75rem; color: var(--fg-light);
 		}
-		header.major h2 { font-size: 2.3rem; text-transform: uppercase; letter-spacing: 0.28em; margin-bottom: 0.5em; }
-		header.major p { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-light); }
-
-		/* ============ INTRO / FEATURED ============ */
-		#intro { text-align: center; margin-bottom: 1rem; }
-		#intro h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); text-transform: none; letter-spacing: 0.04em; margin-bottom: 0.8rem; }
-		#intro .intro-text { max-width: 44em; margin: 0 auto 2.6rem auto; color: var(--fg); }
-		#intro .intro-text b { color: var(--fg-bold); }
-		.featured-image {
-			position: relative; border-radius: 0.4em; overflow: hidden; margin-bottom: 2.6rem;
-			height: 26em; display: grid; place-items: center; border: 1px solid var(--border-light);
+		.post.featured header.major h2 {
+			font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 900; margin: 0.8rem 0;
 		}
-		.featured-image .orb { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.45; }
-		.featured-image .orb1 { width: 20em; height: 20em; background: rgba(24,191,239,0.5); top: -4em; left: -4em; }
-		.featured-image .orb2 { width: 18em; height: 18em; background: rgba(233,69,96,0.4); bottom: -4em; right: -3em; }
-		.featured-image .orb3 { width: 14em; height: 14em; background: rgba(232,182,76,0.35); top: 40%; left: 55%; }
-		.featured-image .f-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
-		.featured-image .f-arabic { font-family: var(--arabic); font-size: 3.4rem; color: #fff; text-shadow: 0 0.15em 0.8em rgba(0,0,0,0.4); margin-bottom: 0.3em; }
-		.featured-image .f-en { font-family: var(--sans); letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
-
-		/* ============ POSTS (projects) ============ */
-		.posts {
-			display: grid; grid-template-columns: repeat(2, 1fr);
-			gap: 3.5em 4em;
+		.post.featured header.major p { color: var(--fg-light); font-size: 0.95rem; max-width: 40em; margin: 0 auto; }
+		.post.featured .image.main {
+			display: block; margin: 2.2rem 0; border-radius: 0.3em; overflow: hidden;
+			height: 24em; position: relative; border: 1px solid var(--border);
 		}
-		.posts article { display: flex; flex-direction: column; }
-		.posts .image {
-			display: block; border-radius: 0.35em; overflow: hidden; margin-bottom: 1.4em;
-			height: 13em; position: relative; border: 1px solid var(--border-light);
-			border-bottom: 0; transition: transform 0.3s, box-shadow 0.3s;
+		.image-thumb { height: 100%; display: grid; place-items: center; position: relative; }
+		.image-thumb::after {
+			content: ''; position: absolute; inset: 0; opacity: 0.18;
+			background-image: linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px);
+			background-size: 26px 26px;
 		}
-		.posts .image:hover { transform: translateY(-4px); box-shadow: 0 1em 2.5em rgba(0,0,0,0.45); }
-		.posts .image .thumb-inner { height: 100%; display: grid; place-items: center; position: relative; }
-		.posts .image .thumb-inner::after {
-			content: ''; position: absolute; inset: 0; opacity: 0.22;
-			background-image: linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
-			background-size: 24px 24px;
+		.image-thumb .thumb-label {
+			font-family: var(--sans); font-weight: 900; font-size: 2.6rem; color: #fff;
+			letter-spacing: 0.12em; text-transform: uppercase; text-shadow: 0 0.08em 0.6em rgba(0,0,0,0.4);
+			position: relative; z-index: 2;
 		}
-		.posts .image .thumb-label { font-family: var(--sans); font-weight: 600; font-size: 1.6rem; color: rgba(255,255,255,0.95); letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 0.1em 0.5em rgba(0,0,0,0.35); position: relative; z-index: 2; }
-		.posts .image .badge {
-			position: absolute; top: 1em; right: 1em; z-index: 3;
-			font-family: var(--sans); font-size: 0.6rem; font-weight: 600;
-			letter-spacing: 0.14em; text-transform: uppercase;
-			padding: 0.4em 1em; border-radius: 2em; backdrop-filter: blur(4px);
+		.image-thumb .badge {
+			position: absolute; top: 1.2em; right: 1.2em; z-index: 3;
+			font-family: var(--sans); font-size: 0.62rem; font-weight: 600;
+			letter-spacing: 0.16em; text-transform: uppercase; padding: 0.4em 1.1em; border-radius: 2em;
+			box-shadow: 0 0.2em 0.8em rgba(0,0,0,0.35);
 		}
 		.badge-flagship { background: var(--accent); color: #fff; }
 		.badge-latest { background: #2d6a4f; color: #fff; }
-		.badge-wip { background: rgba(120, 53, 15, 0.92); color: #fff; }
-		.badge-prod { background: rgba(255,255,255,0.16); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+		.badge-wip { background: #78350f; color: #fff; }
+		.badge-prod { background: rgba(33,41,49,0.75); color: #fff; }
 		.thumb-diwanic { background: linear-gradient(135deg, #0e2a47, #1f5f43); }
 		.thumb-crewai { background: linear-gradient(135deg, #4a1d0e, #9c3a10); }
 		.thumb-fraud { background: linear-gradient(135deg, #14123a, #4c1d95); }
@@ -223,99 +226,132 @@
 		.thumb-hadith { background: linear-gradient(135deg, #2b2113, #5c4516); }
 		.thumb-dvc { background: linear-gradient(135deg, #0f2140, #16306e); }
 		.thumb-reg { background: linear-gradient(135deg, #201d5c, #3730a3); }
-		.posts .meta { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-light); margin-bottom: 0.5em; }
-		.posts .meta .dot { color: var(--accent); }
-		.posts h3 { margin-bottom: 0.5em; }
-		.posts p.desc { font-size: 0.9rem; line-height: 1.9; color: var(--fg-light); margin-bottom: 1.1em; flex: 1; }
-		.posts .tags { display: flex; flex-wrap: wrap; gap: 0.5em; margin-bottom: 1.4em; }
-		.posts .tags span {
-			font-family: var(--sans); font-size: 0.62rem; font-weight: 600;
-			letter-spacing: 0.12em; text-transform: uppercase;
-			padding: 0.35em 1em; border: 1px solid var(--border); border-radius: 2em; color: var(--fg);
+
+		/* ============ POSTS GRID ============ */
+		section.posts { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem 4rem; }
+		section.posts article {
+			border-top: 2px solid var(--fg); padding-top: 2.2rem; text-align: center;
+			display: flex; flex-direction: column;
+		}
+		section.posts .date { margin-bottom: 1rem; }
+		section.posts h2 { font-size: 1.55rem; font-weight: 900; margin-bottom: 0.9rem; }
+		section.posts h2 a { border-bottom: 0; }
+		section.posts .image.fit {
+			display: block; margin: 0.4rem 0 1.6rem 0; border-radius: 0.3em; overflow: hidden;
+			height: 11.5em; position: relative; border: 1px solid var(--border);
+		}
+		section.posts .image.fit .thumb-label { font-size: 1.7rem; }
+		section.posts p { font-size: 0.88rem; color: var(--fg-light); flex: 1; margin-bottom: 1.5rem; }
+		section.posts .tags { display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin-bottom: 1.5rem; }
+		section.posts .tags span {
+			font-family: var(--sans); font-size: 0.6rem; font-weight: 600;
+			letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-light);
+			border: 1px solid var(--border); border-radius: 2em; padding: 0.3em 1em;
 			transition: all 0.2s;
 		}
-		.posts .tags span:hover { border-color: var(--accent); color: var(--accent); }
-		.posts .actions { justify-content: flex-start; }
-		.posts .actions .button { border-color: var(--border); color: var(--fg-bold); }
-		.posts .actions .button:hover { border-color: var(--accent); color: var(--accent); }
-		.posts .actions .button.muted { color: var(--fg-light); }
+		section.posts .tags span:hover { border-color: var(--accent); color: var(--accent); }
+
+		/* ============ SECTION HEADERS (skills / certs / about) ============ */
+		.section-block { margin-top: 4.5rem; border-top: 2px solid var(--fg); padding-top: 3rem; }
+		.section-block > header { text-align: center; margin-bottom: 2.6rem; }
+		.section-block > header .date { margin-bottom: 0.4rem; }
+		.section-block > header h2 { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; }
+		.section-block > header p { color: var(--fg-light); font-size: 0.9rem; max-width: 36em; margin: 0 auto; }
 
 		/* ============ SKILLS ============ */
-		.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2em; }
+		.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
 		.skill-card {
-			border: 1px solid var(--border-light); border-radius: 0.35em;
-			padding: 2.2em 1.6em; text-align: center; background: var(--bg-alt);
+			border: 1px solid var(--border); border-top: 3px solid var(--accent);
+			border-radius: 0.3em; padding: 2em 1.4em; text-align: center; background: #fff;
 			transition: all 0.3s;
 		}
-		.skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 1em 2.5em rgba(0,0,0,0.4); }
+		.skill-card:hover { transform: translateY(-4px); box-shadow: 0 0.9em 2em rgba(33,41,49,0.12); }
 		.skill-card .icon {
-			width: 3.2em; height: 3.2em; margin: 0 auto 1.2em auto; border-radius: 50%;
-			background: var(--accent); color: #fff; display: grid; place-items: center;
-			font-size: 1.15em; box-shadow: 0 0.3em 1.2em rgba(24,191,239,0.35);
+			width: 3em; height: 3em; margin: 0 auto 1.1em auto; border-radius: 50%;
+			background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 1.1em;
+			box-shadow: 0 0.3em 1em rgba(24,191,239,0.3);
 		}
-		.skill-card h3 { font-size: 1.1rem; margin-bottom: 0.9em; }
-		.skill-card ul { display: flex; flex-direction: column; gap: 0.35em; }
+		.skill-card h3 { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.9em; }
+		.skill-card ul { display: flex; flex-direction: column; gap: 0.3em; }
 		.skill-card li { font-size: 0.82rem; color: var(--fg-light); }
-		.skill-card li b { color: var(--fg); font-weight: 300; }
+		.skill-card li b { color: var(--fg); font-weight: 400; }
 
 		/* ============ CERTIFICATIONS ============ */
-		.certs { display: flex; flex-direction: column; gap: 1.2em; max-width: 52em; margin: 0 auto; }
+		.certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
 		.cert-row {
-			display: flex; align-items: center; gap: 1.4em;
-			border: 1px solid var(--border-light); border-left: 4px solid var(--accent);
-			border-radius: 0.35em; padding: 1.3em 1.7em; background: var(--bg-alt);
-			transition: all 0.25s;
+			display: flex; align-items: center; gap: 1.2em;
+			border: 1px solid var(--border); border-left: 4px solid var(--accent);
+			border-radius: 0.3em; padding: 1.2em 1.4em; background: #fff; transition: all 0.25s;
 		}
-		.cert-row:hover { transform: translateX(6px); border-color: var(--border); }
-		.cert-row .icon { color: var(--accent); font-size: 1.3em; width: 2em; text-align: center; flex: none; }
-		.cert-row .cert-body { flex: 1; }
-		.cert-row h3 { margin-bottom: 0.1em; font-size: 1.05rem; }
-		.cert-row .issuer { font-size: 0.75rem; color: var(--fg-light); text-transform: uppercase; letter-spacing: 0.12em; }
-		.cert-row .verify { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 0; white-space: nowrap; }
-		.cert-row .verify:hover { color: #fff; }
-		.cert-note { text-align: center; margin-top: 2em; font-size: 0.82rem; color: var(--fg-light); font-style: italic; }
+		.cert-row:hover { transform: translateX(5px); box-shadow: 0 0.5em 1.5em rgba(33,41,49,0.1); }
+		.cert-row .icon { color: var(--accent); font-size: 1.2em; width: 1.8em; text-align: center; flex: none; }
+		.cert-row .cert-body { flex: 1; min-width: 0; }
+		.cert-row h3 { margin-bottom: 0.05em; font-size: 0.98rem; font-weight: 600; line-height: 1.4; }
+		.cert-row .issuer { font-size: 0.7rem; color: var(--fg-light); text-transform: uppercase; letter-spacing: 0.1em; }
+		.cert-row .verify {
+			font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+			text-transform: uppercase; color: var(--accent); border-bottom: 0; white-space: nowrap;
+			border: 1px solid var(--accent); border-radius: 2em; padding: 0.45em 1.1em; transition: all 0.2s;
+		}
+		.cert-row .verify:hover { background: var(--accent); color: #fff; }
 
 		/* ============ ABOUT ============ */
 		.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3em; align-items: start; }
 		.about-grid p { margin-bottom: 1.2em; color: var(--fg-light); }
-		.about-grid p b { color: var(--fg-bold); font-weight: 400; }
+		.about-grid p b { color: var(--fg); font-weight: 400; }
 		.quote-card {
-			border: 1px solid var(--border-light); border-left: 4px solid var(--accent);
-			border-radius: 0.35em; padding: 2em; background: var(--bg-alt);
+			border: 1px solid var(--border); border-left: 4px solid var(--accent);
+			border-radius: 0.3em; padding: 2em; background: #f9fafb;
 		}
 		.quote-card .arabic { font-family: var(--arabic); font-size: 1.9em; color: var(--accent); margin-bottom: 0.5em; line-height: 1.6; }
 		.quote-card p { color: var(--fg) !important; margin-bottom: 0.4em; }
 		.quote-card .trans { font-size: 0.78rem; color: var(--fg-light); }
 
 		/* ============ FOOTER ============ */
-		#footer {
-			border-top: 2px solid var(--border); margin-top: 5rem;
-			background: var(--bg-alt); padding: 4rem 2rem 2rem 2rem; text-align: center;
+		#footer { background: var(--bg); padding: 0 3rem 3rem 3rem; }
+		#footer .foot-top { border-top: 2px solid var(--fg); padding-top: 3rem; }
+		#footer h2 { text-align: center; font-size: 1.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
+		#footer .foot-arabic { text-align: center; font-family: var(--arabic); font-size: 1.6em; color: var(--accent); margin-bottom: 0.5em; }
+		#footer .form-wrap { max-width: 42em; margin: 2.5rem auto 0 auto; }
+		#footer form .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+		#footer form .field.full { grid-column: 1 / -1; }
+		#footer form label {
+			display: block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+			letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg); margin-bottom: 0.5em;
 		}
-		#footer .inner { max-width: 74em; margin: 0 auto; }
-		#footer .foot-arabic { font-family: var(--arabic); font-size: 1.8em; color: var(--accent); margin-bottom: 0.6em; }
+		#footer form input, #footer form textarea {
+			width: 100%; background: #f5f5f5; border: 1px solid var(--border); border-radius: 0.25em;
+			padding: 0.9em 1.1em; font-family: var(--serif); font-size: 0.9rem; color: var(--fg);
+			outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+		}
+		#footer form input:focus, #footer form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(24,191,239,0.15); }
+		#footer form textarea { resize: vertical; min-height: 8em; }
+		#footer .form-actions { text-align: center; margin-top: 1.6rem; }
 		#footer .contact-cols {
 			display: grid; grid-template-columns: repeat(3, 1fr); gap: 2em;
-			margin: 3em 0; border-top: 1px solid var(--border-light); padding-top: 3em;
+			margin-top: 3.5rem; border-top: 1px solid var(--border); padding-top: 3rem; text-align: center;
 		}
-		#footer .col h4 { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-light); margin-bottom: 1.2em; }
-		#footer .col p, #footer .col a { font-size: 0.9rem; color: var(--fg); }
+		#footer .col h4 {
+			font-family: var(--sans); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.22em;
+			text-transform: uppercase; color: var(--fg-light); margin-bottom: 1.1em;
+		}
+		#footer .col p, #footer .col a { font-size: 0.88rem; color: var(--fg); }
 		#footer .col .icon { color: var(--accent); margin-right: 0.5em; }
-		#footer .social { display: flex; gap: 0.7em; justify-content: center; margin-top: 0.4em; }
+		#footer .social { display: flex; gap: 0.7em; justify-content: center; }
 		#footer .social a {
-			width: 2.7em; height: 2.7em; border-radius: 50%;
-			border: 1px solid var(--border); display: grid; place-items: center;
-			font-size: 0.95rem; color: var(--fg); transition: all 0.2s;
+			width: 2.7em; height: 2.7em; border-radius: 50%; border: 1px solid var(--border);
+			display: grid; place-items: center; font-size: 0.95rem; color: var(--fg);
+			transition: all 0.2s; border-bottom: 1px solid var(--border);
 		}
 		#footer .social a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 		#footer .copyright {
-			border-top: 1px solid var(--border-light); padding-top: 2.5em;
-			font-size: 0.75rem; color: var(--fg-light); letter-spacing: 0.08em;
+			margin-top: 3.5rem; border-top: 1px solid var(--border); padding-top: 2.4rem;
+			text-align: center; font-size: 0.75rem; color: var(--fg-light); letter-spacing: 0.08em;
 		}
 		#footer .copyright a { color: var(--fg-light); }
 
 		/* ============ REVEAL ============ */
-		.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s ease; }
+		.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
 		.reveal.visible { opacity: 1; transform: translateY(0); }
 
 		/* ============ RESPONSIVE ============ */
@@ -323,14 +359,20 @@
 			.skills-grid { grid-template-columns: repeat(2, 1fr); }
 		}
 		@media screen and (max-width: 860px) {
-			#nav { display: none; }
+			#nav ul.links { display: none; }
 			#menuBtn { display: inline-block; }
-			#topbar .tb-left { display: none; }
-			.posts { grid-template-columns: 1fr; }
+			#nav { padding: 0 1.2rem; }
+			section.posts { grid-template-columns: 1fr; }
+			.certs-grid { grid-template-columns: 1fr; }
 			.about-grid { grid-template-columns: 1fr; }
+			.skills-grid { grid-template-columns: 1fr 1fr; }
+			#footer form .fields { grid-template-columns: 1fr; }
 			.contact-cols { grid-template-columns: 1fr; }
-			#header { padding-top: 9rem; min-height: 80vh; }
-			.featured-image { height: 18em; }
+			#main, #footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+			.post.featured .image.main { height: 16em; }
+		}
+		@media screen and (max-width: 520px) {
+			.skills-grid { grid-template-columns: 1fr; }
 		}
 		@media (prefers-reduced-motion: reduce) {
 			*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -340,318 +382,363 @@
 </head>
 <body class="is-preload">
 
-	<!-- ============ TOP BAR ============ -->
-	<div id="topbar">
-		<div class="tb-left">© 2026 · Kuala Lumpur, MY</div>
-		<a href="#top" class="tb-logo">AMAR <span>FAUZIE</span></a>
-		<div class="tb-right">
-			<nav id="nav">
-				<a href="#projects" class="nav-link">Projects</a>
-				<a href="#skills" class="nav-link">Skills</a>
-				<a href="#certifications" class="nav-link">Certs</a>
-				<a href="#about" class="nav-link">About</a>
-				<a href="#contact" class="nav-link">Contact</a>
-			</nav>
-			<a class="tb-icon" href="https://github.com/amarpoji" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-			<a class="tb-icon" href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-			<a class="tb-icon" href="mailto:amar.fauzie.dev@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-			<button id="menuBtn" onclick="openMenu()">Menu</button>
+	<!-- ============ INTRO (dark starfield screen) ============ -->
+	<div id="intro">
+		<div class="intro-inner">
+			<span class="arabic-badge" dir="rtl">السَّلَامُ عَلَيْكُمْ</span>
+			<h1>This is<br /><span class="accent">AMAR FAUZIE</span></h1>
+			<p><b>Data Scientist</b> &amp; <b>AI Engineer</b> — building intelligent language systems: hybrid retrieval for classical Arabic poetry, multi-agent pipelines that authenticate Hadith, and MLOps foundations that keep models reproducible in production.</p>
+			<ul class="actions">
+				<li><a href="#header" class="button solo icon solid fa-arrow-down scrolly"><span class="label">Continue</span></a></li>
+			</ul>
 		</div>
 	</div>
 
-	<!-- mobile nav overlay -->
-	<div id="navOverlay">
-		<span class="close" onclick="closeMenu()">&times;</span>
-		<a href="#top" class="nav-link" onclick="closeMenu()">Home</a>
-		<a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a>
-		<a href="#skills" class="nav-link" onclick="closeMenu()">Skills</a>
-		<a href="#certifications" class="nav-link" onclick="closeMenu()">Certifications</a>
-		<a href="#about" class="nav-link" onclick="closeMenu()">About</a>
-		<a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
-	</div>
+	<!-- ============ CONTENT (white area) ============ -->
+	<div id="content-wrap">
 
-	<!-- ============ HERO ============ -->
-	<header id="header">
-		<span class="hero-badge" dir="rtl">السَّلَامُ عَلَيْكُمْ</span>
-		<h1 class="hero-title">AMAR <span class="accent">FAUZIE</span></h1>
-		<p class="hero-sub"><b>Data Scientist</b> · <b>AI Engineer</b> · NLP &amp; RAG Specialist</p>
-		<p class="hero-desc">I build intelligent language systems — hybrid retrieval engines for classical Arabic poetry, multi-agent pipelines that authenticate Hadith, and MLOps foundations that keep models reproducible and observable in production.</p>
-		<ul class="actions">
-			<li><a href="#projects" class="button accent large">Explore My Work</a></li>
-			<li><a href="#contact" class="button">Get in Touch</a></li>
-		</ul>
-	</header>
+		<!-- Header -->
+		<header id="header">
+			<a href="#top" class="logo">AMAR <span>FAUZIE</span></a>
+		</header>
 
-	<!-- ============ MAIN ============ -->
-	<div id="main">
-
-		<!-- Intro / featured -->
-		<section id="intro" class="reveal">
-			<h2>Building Intelligent Language Systems</h2>
-			<p class="intro-text">
-				My path is unusual: a background in <b>Arabic literature and Islamic theology</b> led me to data science —
-				and it turns out classical text analysis, isnad authentication, and poetry meter are excellent training for
-				<b>NLP, information retrieval, and trustworthy AI</b>.
-			</p>
-			<div class="featured-image">
-				<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
-				<div class="f-content">
-					<div class="f-arabic" dir="rtl">العِلْمُ نُورٌ</div>
-					<div class="f-en">Knowledge is Light</div>
-				</div>
-			</div>
-			<ul class="actions">
-				<li><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="button">Featured Project — Diwanic</a></li>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="#projects" class="nav-link">Projects</a></li>
+				<li><a href="#skills" class="nav-link">Skills</a></li>
+				<li><a href="#certifications" class="nav-link">Certifications</a></li>
+				<li><a href="#about" class="nav-link">About</a></li>
+				<li><a href="#contact" class="nav-link">Contact</a></li>
 			</ul>
-		</section>
+			<ul class="icons">
+				<li><a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li>
+				<li><a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" class="icon brands fa-linkedin-in" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:amar.fauzie.dev@gmail.com" class="icon solid fa-envelope" aria-label="Email"><span class="label">Email</span></a></li>
+			</ul>
+			<button id="menuBtn" onclick="openMenu()">Menu</button>
+		</nav>
 
-		<!-- Projects -->
-		<section id="projects">
-			<header class="major reveal">
-				<h2>Featured Projects</h2>
-				<p>Systems I've designed, built, and shipped</p>
-			</header>
-			<div class="posts">
+		<!-- mobile nav overlay -->
+		<div id="navOverlay">
+			<span class="close" onclick="closeMenu()">&times;</span>
+			<a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a>
+			<a href="#skills" class="nav-link" onclick="closeMenu()">Skills</a>
+			<a href="#certifications" class="nav-link" onclick="closeMenu()">Certifications</a>
+			<a href="#about" class="nav-link" onclick="closeMenu()">About</a>
+			<a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Featured Post: Diwanic -->
+			<article class="post featured reveal" id="projects">
+				<header class="major">
+					<span class="date">Flagship Project · 2026</span>
+					<h2><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener">Diwanic — Arabic Poetry<br />Retrieval System</a></h2>
+					<p>A production hybrid search engine for classical Arabic poetry: semantic + BM25 retrieval fused with RRF, Prefect orchestration, Qdrant vectors, and a PostgreSQL truth layer — precise at verse and poem level.</p>
+				</header>
+				<a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="image main">
+					<div class="image-thumb thumb-diwanic">
+						<span class="badge badge-flagship">Flagship</span>
+						<span class="thumb-label">ديوان</span>
+					</div>
+				</a>
+				<ul class="actions special">
+					<li><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="button large">View Repository</a></li>
+				</ul>
+			</article>
+
+			<!-- Posts -->
+			<section class="posts" id="projects-grid">
 
 				<article class="reveal">
-					<a class="image" href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener">
-						<div class="thumb-inner thumb-diwanic">
-							<span class="badge badge-flagship">Flagship</span>
-							<span class="thumb-label">ديوان</span>
-						</div>
-					</a>
-					<div class="meta">2026 <span class="dot">·</span> FastAPI <span class="dot">·</span> Qdrant</div>
-					<h3>Diwanic — Arabic Poetry Retrieval</h3>
-					<p class="desc">Production hybrid search engine for classical Arabic poetry: semantic + BM25 retrieval with RRF fusion, Prefect orchestration, Qdrant vectors, and a PostgreSQL truth layer — precise at verse and poem level.</p>
-					<div class="tags"><span>FastAPI</span><span>Qdrant</span><span>PostgreSQL</span><span>Prefect</span><span>Docker</span></div>
-					<ul class="actions"><li><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
-				</article>
-
-				<article class="reveal">
-					<a class="image" href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener">
-						<div class="thumb-inner thumb-crewai">
+					<header>
+						<span class="date">Latest · 2026</span>
+						<h2><a href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener">CrewAI Hadith Research Agent</a></h2>
+					</header>
+					<a href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener" class="image fit">
+						<div class="image-thumb thumb-crewai">
 							<span class="badge badge-latest">Latest</span>
 							<span class="thumb-label">Hadith</span>
 						</div>
 					</a>
-					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> CrewAI</div>
-					<h3>CrewAI Hadith Research Agent</h3>
-					<p class="desc">Multi-agent pipeline that researches, authenticates, and writes about Hadith — confined to trusted sources (sunnah.com, shamela.ws) so it never cites unreliable content. Research → Validate → Write.</p>
-					<div class="tags"><span>CrewAI</span><span>Multi-Agent</span><span>Pydantic v2</span><span>Arabic NLP</span></div>
-					<ul class="actions"><li><a href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+					<p>Multi-agent pipeline that researches, authenticates, and writes about Hadith — confined to trusted sources (sunnah.com, shamela.ws). Research → Validate → Write.</p>
+					<div class="tags"><span>CrewAI</span><span>Multi-Agent</span><span>Arabic NLP</span></div>
+					<ul class="actions special"><li><a href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
 				</article>
 
 				<article class="reveal">
-					<a class="image" href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener">
-						<div class="thumb-inner thumb-fraud">
+					<header>
+						<span class="date">Production · 2026</span>
+						<h2><a href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener">AI Fraud Detection System</a></h2>
+					</header>
+					<a href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener" class="image fit">
+						<div class="image-thumb thumb-fraud">
 							<span class="badge badge-prod">Production</span>
 							<span class="thumb-label">Fraud</span>
 						</div>
 					</a>
-					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> React</div>
-					<h3>AI Fraud Detection System</h3>
-					<p class="desc">Full-stack ML fraud detection: DVC-versioned data, MLflow experiment tracking, Docker deployment, and a React UI with real-time inference.</p>
-					<div class="tags"><span>scikit-learn</span><span>DVC</span><span>MLflow</span><span>Docker</span><span>React</span></div>
-					<ul class="actions">
-						<li><a href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener" class="button small">Repo</a></li>
-						<li><a href="https://github.com/amarpoji/ai-fraud-detector-streamlit" target="_blank" rel="noopener" class="button small muted">Streamlit</a></li>
-					</ul>
+					<p>Full-stack ML fraud detection: DVC-versioned data, MLflow experiment tracking, Docker deployment, React UI with real-time inference.</p>
+					<div class="tags"><span>scikit-learn</span><span>DVC</span><span>MLflow</span><span>Docker</span></div>
+					<ul class="actions special"><li><a href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
 				</article>
 
 				<article class="reveal">
-					<a class="image" href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener">
-						<div class="thumb-inner thumb-rag">
+					<header>
+						<span class="date">Production · 2026</span>
+						<h2><a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener">Simple RAG System</a></h2>
+					</header>
+					<a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener" class="image fit">
+						<div class="image-thumb thumb-rag">
 							<span class="badge badge-prod">Production</span>
 							<span class="thumb-label">RAG</span>
 						</div>
 					</a>
-					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> OpenSearch</div>
-					<h3>Simple RAG System</h3>
-					<p class="desc">Local retrieval-augmented generation with OpenSearch vectors, LLM integration, OCR document ingestion, and a Streamlit interface for context-aware Q&amp;A.</p>
+					<p>Local retrieval-augmented generation with OpenSearch vectors, LLM integration, OCR document ingestion, and a Streamlit interface for context-aware Q&amp;A.</p>
 					<div class="tags"><span>OpenSearch</span><span>LangChain</span><span>OCR</span><span>Streamlit</span></div>
-					<ul class="actions"><li><a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+					<ul class="actions special"><li><a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
 				</article>
 
 				<article class="reveal">
-					<a class="image" href="#projects">
-						<div class="thumb-inner thumb-hadith">
+					<header>
+						<span class="date">WIP · 2026</span>
+						<h2><a href="https://github.com/amarpoji" target="_blank" rel="noopener">HadithGraph</a></h2>
+					</header>
+					<a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="image fit">
+						<div class="image-thumb thumb-hadith">
 							<span class="badge badge-wip">WIP</span>
 							<span class="thumb-label">Graph</span>
 						</div>
 					</a>
-					<div class="meta">2026 <span class="dot">·</span> GraphRAG</div>
-					<h3>HadithGraph</h3>
-					<p class="desc">Semantic knowledge graph over Hadith literature using Microsoft GraphRAG — entity extraction, relationship mapping, and intelligent retrieval for scholarship research.</p>
+					<p>Semantic knowledge graph over Hadith literature using Microsoft GraphRAG — entity extraction, relationship mapping, intelligent retrieval for scholarship research.</p>
 					<div class="tags"><span>GraphRAG</span><span>Knowledge Graphs</span><span>Arabic NLP</span></div>
-					<ul class="actions"><li><a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="button small muted">Coming Soon</a></li></ul>
+					<ul class="actions special"><li><a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="button small">Coming Soon</a></li></ul>
 				</article>
 
 				<article class="reveal">
-					<a class="image" href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener">
-						<div class="thumb-inner thumb-dvc">
+					<header>
+						<span class="date">Production · 2026</span>
+						<h2><a href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener">ML Pipeline with DVC</a></h2>
+					</header>
+					<a href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener" class="image fit">
+						<div class="image-thumb thumb-dvc">
 							<span class="badge badge-prod">Production</span>
 							<span class="thumb-label">DVC</span>
 						</div>
 					</a>
-					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> DVC</div>
-					<h3>ML Pipeline with DVC</h3>
-					<p class="desc">Reproducible ML pipeline: data &amp; model versioning with DVC, automated stages, and experiment tracking — MLOps best practices end to end.</p>
+					<p>Reproducible ML pipeline: data &amp; model versioning with DVC, automated stages, experiment tracking — MLOps best practices end to end.</p>
 					<div class="tags"><span>DVC</span><span>scikit-learn</span><span>MLOps</span></div>
-					<ul class="actions"><li><a href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+					<ul class="actions special"><li><a href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
 				</article>
 
 				<article class="reveal">
-					<a class="image" href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener">
-						<div class="thumb-inner thumb-reg">
+					<header>
+						<span class="date">Production · 2026</span>
+						<h2><a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener">End-to-End ML Regression</a></h2>
+					</header>
+					<a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener" class="image fit">
+						<div class="image-thumb thumb-reg">
 							<span class="badge badge-prod">Production</span>
 							<span class="thumb-label">E2E</span>
 						</div>
 					</a>
-					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> Flask</div>
-					<h3>End-to-End ML Regression</h3>
-					<p class="desc">Complete regression project lifecycle — data collection, feature engineering, model selection, evaluation, and deployment with monitoring.</p>
+					<p>Complete regression project lifecycle — data collection, feature engineering, model selection, evaluation, deployment with monitoring.</p>
 					<div class="tags"><span>pandas</span><span>scikit-learn</span><span>Flask</span></div>
-					<ul class="actions"><li><a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+					<ul class="actions special"><li><a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
 				</article>
 
-			</div>
-		</section>
+			</section>
 
-		<!-- Skills -->
-		<section id="skills">
-			<header class="major reveal">
-				<h2>Core Skills</h2>
-				<p>Tools and domains I work in daily</p>
-			</header>
-			<div class="skills-grid">
-				<div class="skill-card reveal">
-					<span class="icon solid fa-code"></span>
-					<h3>Languages</h3>
-					<ul><li><b>Python</b></li><li><b>SQL</b></li><li><b>JavaScript / TS</b></li><li><b>Bash</b></li></ul>
+			<!-- Core Skills -->
+			<section class="section-block" id="skills">
+				<header class="reveal">
+					<span class="date">What I work with</span>
+					<h2>Core Skills</h2>
+					<p>Tools and domains I use daily to ship ML and AI systems.</p>
+				</header>
+				<div class="skills-grid">
+					<div class="skill-card reveal">
+						<span class="icon solid fa-code"></span>
+						<h3>Languages</h3>
+						<ul><li><b>Python</b></li><li><b>SQL</b></li><li><b>JavaScript / TS</b></li><li><b>Bash</b></li></ul>
+					</div>
+					<div class="skill-card reveal">
+						<span class="icon solid fa-language"></span>
+						<h3>ML / AI</h3>
+						<ul><li><b>NLP &amp; LLMs</b></li><li><b>RAG Systems</b></li><li><b>Multi-Agent AI</b></li><li><b>Arabic NLP</b></li></ul>
+					</div>
+					<div class="skill-card reveal">
+						<span class="icon solid fa-cogs"></span>
+						<h3>MLOps</h3>
+						<ul><li><b>DVC</b></li><li><b>MLflow</b></li><li><b>Docker</b></li><li><b>Prefect</b></li><li><b>GitHub Actions</b></li></ul>
+					</div>
+					<div class="skill-card reveal">
+						<span class="icon solid fa-database"></span>
+						<h3>Data &amp; Infra</h3>
+						<ul><li><b>PostgreSQL</b></li><li><b>Qdrant</b></li><li><b>OpenSearch</b></li><li><b>FastAPI</b></li><li><b>Streamlit</b></li></ul>
+					</div>
 				</div>
-				<div class="skill-card reveal">
-					<span class="icon solid fa-language"></span>
-					<h3>ML / AI</h3>
-					<ul><li><b>NLP &amp; LLMs</b></li><li><b>RAG Systems</b></li><li><b>Multi-Agent AI</b></li><li><b>Arabic NLP</b></li></ul>
-				</div>
-				<div class="skill-card reveal">
-					<span class="icon solid fa-cogs"></span>
-					<h3>MLOps</h3>
-					<ul><li><b>DVC</b></li><li><b>MLflow</b></li><li><b>Docker</b></li><li><b>Prefect</b></li><li><b>GitHub Actions</b></li></ul>
-				</div>
-				<div class="skill-card reveal">
-					<span class="icon solid fa-database"></span>
-					<h3>Data &amp; Infra</h3>
-					<ul><li><b>PostgreSQL</b></li><li><b>Qdrant</b></li><li><b>OpenSearch</b></li><li><b>FastAPI</b></li><li><b>Streamlit</b></li></ul>
-				</div>
-			</div>
-		</section>
+			</section>
 
-		<!-- Certifications -->
-		<section id="certifications">
-			<header class="major reveal">
-				<h2>Certifications</h2>
-				<p>Continuous learning, verified</p>
-			</header>
-			<div class="certs">
-				<div class="cert-row reveal">
-					<span class="icon solid fa-certificate"></span>
-					<div class="cert-body">
-						<h3>Deep Learning Specialization</h3>
-						<div class="issuer">DeepLearning.AI · Coursera</div>
+			<!-- Certifications -->
+			<section class="section-block" id="certifications">
+				<header class="reveal">
+					<span class="date">Verified credentials</span>
+					<h2>Certifications</h2>
+					<p>Continuous learning — every credential below links to its official verification.</p>
+				</header>
+				<div class="certs-grid">
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Practical Multi AI Agents &amp; Advanced Use Cases with crewAI</h3>
+							<div class="issuer">DeepLearning.AI</div>
+						</div>
+						<a class="verify" href="https://learn.deeplearning.ai/accomplishments/64ec04ba-3b91-44f0-82b1-6dcf62740a97" target="_blank" rel="noopener">Verify</a>
 					</div>
-					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-				</div>
-				<div class="cert-row reveal">
-					<span class="icon solid fa-certificate"></span>
-					<div class="cert-body">
-						<h3>Machine Learning Specialization</h3>
-						<div class="issuer">Stanford Online · Coursera</div>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Multi AI Agent Systems with crewAI</h3>
+							<div class="issuer">DeepLearning.AI</div>
+						</div>
+						<a class="verify" href="https://learn.deeplearning.ai/accomplishments/84b48ed1-6537-4503-aa50-79e31f5cef37" target="_blank" rel="noopener">Verify</a>
 					</div>
-					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-				</div>
-				<div class="cert-row reveal">
-					<span class="icon solid fa-certificate"></span>
-					<div class="cert-body">
-						<h3>Microsoft Azure AI Fundamentals (AI-900)</h3>
-						<div class="issuer">Microsoft</div>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Retrieval Augmented Generation (RAG)</h3>
+							<div class="issuer">DeepLearning.AI</div>
+						</div>
+						<a class="verify" href="https://learn.deeplearning.ai/certificates/b7671906-3210-4ee2-b17b-b3832efa1b86" target="_blank" rel="noopener">Verify</a>
 					</div>
-					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-				</div>
-				<div class="cert-row reveal">
-					<span class="icon solid fa-certificate"></span>
-					<div class="cert-body">
-						<h3>Multi-AI Agent Systems with CrewAI</h3>
-						<div class="issuer">DeepLearning.AI</div>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Pydantic for LLM Workflows</h3>
+							<div class="issuer">DeepLearning.AI</div>
+						</div>
+						<a class="verify" href="https://learn.deeplearning.ai/accomplishments/afeb9d5e-51b0-4dd4-aa51-042ad7f4d558" target="_blank" rel="noopener">Verify</a>
 					</div>
-					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Linear Algebra for Machine Learning &amp; Data Science</h3>
+							<div class="issuer">DeepLearning.AI · Coursera</div>
+						</div>
+						<a class="verify" href="https://www.coursera.org/account/accomplishments/verify/Y545OFFC7S1S" target="_blank" rel="noopener">Verify</a>
+					</div>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Probability &amp; Statistics for ML &amp; Data Science</h3>
+							<div class="issuer">DeepLearning.AI · Coursera</div>
+						</div>
+						<a class="verify" href="https://www.coursera.org/account/accomplishments/verify/NWHRKJTRZUDM" target="_blank" rel="noopener">Verify</a>
+					</div>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Advanced Learning Algorithms</h3>
+							<div class="issuer">DeepLearning.AI · Coursera</div>
+						</div>
+						<a class="verify" href="https://www.coursera.org/account/accomplishments/verify/WXB4LF7QYTBF" target="_blank" rel="noopener">Verify</a>
+					</div>
+					<div class="cert-row reveal">
+						<span class="icon solid fa-certificate"></span>
+						<div class="cert-body">
+							<h3>Supervised Machine Learning: Regression &amp; Classification</h3>
+							<div class="issuer">DeepLearning.AI · Coursera</div>
+						</div>
+						<a class="verify" href="https://www.coursera.org/account/accomplishments/verify/0FOCMDHNV2TN" target="_blank" rel="noopener">Verify</a>
+					</div>
 				</div>
-			</div>
-			<p class="cert-note">Note: verification links are placeholders — send me your certificate URLs and I'll wire them in.</p>
-		</section>
+			</section>
 
-		<!-- About -->
-		<section id="about">
-			<header class="major reveal">
-				<h2>About Me</h2>
-				<p>The story behind the code</p>
-			</header>
-			<div class="about-grid">
-				<div class="reveal">
-					<p>
-						My path is unusual: a background in <b>Arabic literature and Islamic theology</b> led me to data science —
-						and it turns out classical text analysis, isnad authentication, and poetry meter are excellent training
-						for <b>NLP, information retrieval, and trustworthy AI</b>.
-					</p>
-					<p>
-						I build systems that respect language — hybrid retrieval engines that understand Arabic morphology,
-						multi-agent pipelines that only cite verified sources, and MLOps foundations that keep models reproducible
-						and observable in production.
-					</p>
-					<p>Currently focused on <b>Arabic NLP, RAG, and agentic AI</b> — and always learning.</p>
+			<!-- About -->
+			<section class="section-block" id="about">
+				<header class="reveal">
+					<span class="date">The story</span>
+					<h2>About Me</h2>
+					<p>The story behind the code.</p>
+				</header>
+				<div class="about-grid">
+					<div class="reveal">
+						<p>
+							My path is unusual: a background in <b>Arabic literature and Islamic theology</b> led me to data science —
+							and it turns out classical text analysis, isnad authentication, and poetry meter are excellent training
+							for <b>NLP, information retrieval, and trustworthy AI</b>.
+						</p>
+						<p>
+							I build systems that respect language — hybrid retrieval engines that understand Arabic morphology,
+							multi-agent pipelines that only cite verified sources, and MLOps foundations that keep models reproducible
+							and observable in production.
+						</p>
+						<p>Currently focused on <b>Arabic NLP, RAG, and agentic AI</b> — and always learning.</p>
+					</div>
+					<div class="quote-card reveal">
+						<div class="arabic" dir="rtl">العِلْمُ نُورٌ</div>
+						<p>"Knowledge is light."</p>
+						<div class="trans">— a principle I apply to every model, dataset, and pipeline I build.</div>
+					</div>
 				</div>
-				<div class="quote-card reveal">
-					<div class="arabic" dir="rtl">العِلْمُ نُورٌ</div>
-					<p>"Knowledge is light."</p>
-					<div class="trans">— a principle I apply to every model, dataset, and pipeline I build.</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="reveal">
+			<div class="foot-top" id="contact">
+				<div class="foot-arabic" dir="rtl">شكرًا لزيارتكم</div>
+				<h2>Get in Touch</h2>
+				<div class="form-wrap">
+					<form id="contactForm">
+						<div class="fields">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" placeholder="Your name" />
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="email" name="email" id="email" placeholder="you@example.com" />
+							</div>
+							<div class="field full">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="4" placeholder="Tell me about your project or opportunity..."></textarea>
+							</div>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="button primary">Send Message</button>
+						</div>
+					</form>
+				</div>
+				<div class="contact-cols">
+					<div class="col">
+						<h4>Location</h4>
+						<p><i class="fas fa-map-marker-alt icon"></i>Kuala Lumpur, Malaysia<br />Remote-ready</p>
+					</div>
+					<div class="col">
+						<h4>Email</h4>
+						<p><i class="fas fa-envelope icon"></i><a href="mailto:amar.fauzie.dev@gmail.com">amar.fauzie.dev@gmail.com</a></p>
+					</div>
+					<div class="col">
+						<h4>Social</h4>
+						<div class="social">
+							<a href="https://github.com/amarpoji" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+							<a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="copyright">
+					<p>&copy; 2026 Muhammad Amar Fauzie Bin Ismail — Built with a love for language &amp; machines.<br />
+					Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a> (Massively).</p>
 				</div>
 			</div>
-		</section>
+		</footer>
 
 	</div>
-
-	<!-- ============ FOOTER ============ -->
-	<footer id="footer">
-		<div class="inner">
-			<div class="foot-arabic" dir="rtl">شكرًا لزيارتكم</div>
-			<h2 style="font-size:1.9rem; text-transform:uppercase; letter-spacing:0.26em;">Get in Touch</h2>
-			<p style="color:var(--fg-light); max-width:38em; margin:0 auto;">Looking for a data scientist / AI engineer who can ship Arabic NLP, RAG, and agentic systems? Let's talk.</p>
-			<ul class="actions" style="justify-content:center; margin-top:1.8rem;">
-				<li><a href="mailto:amar.fauzie.dev@gmail.com" class="button accent"><i class="fas fa-envelope"></i>&nbsp; amar.fauzie.dev@gmail.com</a></li>
-			</ul>
-			<div class="contact-cols">
-				<div class="col">
-					<h4>Location</h4>
-					<p><i class="fas fa-map-marker-alt icon"></i>Kuala Lumpur, Malaysia<br />Remote-ready</p>
-				</div>
-				<div class="col">
-					<h4>Email</h4>
-					<p><i class="fas fa-envelope icon"></i><a href="mailto:amar.fauzie.dev@gmail.com">amar.fauzie.dev@gmail.com</a></p>
-				</div>
-				<div class="col">
-					<h4>Social</h4>
-					<div class="social">
-						<a href="https://github.com/amarpoji" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-						<a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="copyright">
-				<p>&copy; 2026 Muhammad Amar Fauzie Bin Ismail — Built with a love for language &amp; machines.<br />
-				Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a> (Massively).</p>
-			</div>
-		</div>
-	</footer>
 
 	<script>
 		/* ============ MOBILE MENU ============ */
@@ -666,7 +753,7 @@
 			let current = '';
 			sections.forEach(id => {
 				const el = document.getElementById(id);
-				if (el && window.scrollY >= el.offsetTop - 200) current = id;
+				if (el && window.scrollY >= el.offsetTop - 240) current = id;
 			});
 			navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
 		}, { passive: true });
@@ -674,8 +761,19 @@
 		/* ============ REVEAL ON SCROLL ============ */
 		const io = new IntersectionObserver(entries => {
 			entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-		}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+		}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 		document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+		/* ============ CONTACT FORM → MAILTO ============ */
+		document.getElementById('contactForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+			const name = document.getElementById('name').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const message = document.getElementById('message').value.trim();
+			const subject = encodeURIComponent(name ? 'Portfolio contact — ' + name : 'Portfolio contact');
+			const body = encodeURIComponent((name ? 'Name: ' + name + '\n' : '') + (email ? 'Email: ' + email + '\n\n' : '\n') + message);
+			window.location.href = 'mailto:amar.fauzie.dev@gmail.com?subject=' + subject + '&body=' + body;
+		});
 
 		/* ============ REMOVE PRELOAD ============ */
 		document.body.classList.remove('is-preload');
