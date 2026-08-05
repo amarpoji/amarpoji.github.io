@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!--
 	Portfolio of Muhammad Amar Fauzie Bin Ismail
-	Styled after "Editorial" by HTML5 UP (html5up.net | @ajlkn) — CCA 3.0 license
+	Styled after "Massively" by HTML5 UP (html5up.net | @ajlkn) — CCA 3.0 license
 -->
 <html>
 <head>
@@ -11,348 +11,326 @@
 	<meta name="description" content="Data Scientist & AI Engineer specializing in NLP, RAG systems, multi-agent AI, and MLOps." />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Source+Sans+Pro:wght@300;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 	<style>
-		/* ============ EDITORIAL TOKENS ============ */
+		/* ============ MASSIVELY TOKENS ============ */
 		:root {
-			--accent: #f56a6a;
-			--accent-light: #f67878;
-			--accent-dark: #f45c5c;
-			--ink: #3d4449;            /* headings */
-			--text: #7f888f;           /* body muted */
-			--text-strong: #3d4449;
-			--text-faint: #9fa3a6;
-			--bg: #ffffff;
-			--bg-sidebar: #f5f6f7;
-			--border: rgba(210, 215, 217, 0.75);
-			--serif: 'Roboto Slab', serif;
-			--sans: 'Open Sans', sans-serif;
+			--accent: #18bfef;          /* cyan */
+			--accent-dark: #0f9cc7;
+			--bg: #1e252d;              /* dark charcoal */
+			--bg-alt: #141920;          /* darker panel */
+			--bg-input: rgba(255,255,255,0.075);
+			--fg: #d6dbe0;              /* body text */
+			--fg-bold: #ffffff;         /* headings */
+			--fg-light: rgba(255,255,255,0.45);
+			--border: rgba(255,255,255,0.2);
+			--border-light: rgba(255,255,255,0.1);
+			--serif: 'Merriweather', Georgia, serif;
+			--sans: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
 			--arabic: 'Amiri', serif;
 		}
 
 		/* ============ RESET / BASE ============ */
 		*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-		html { scroll-behavior: smooth; }
+		html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 		body {
-			font-family: var(--sans);
-			font-size: 14pt;
-			font-weight: 400;
-			line-height: 2.25;
-			color: var(--text);
+			font-family: var(--serif);
+			font-size: 15px;
+			font-weight: 300;
+			line-height: 2;
+			color: var(--fg);
 			background: var(--bg);
 			-webkit-font-smoothing: antialiased;
+			overflow-x: hidden;
 		}
-		a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted transparent; transition: color 0.2s, border-color 0.2s; }
-		a:hover { color: var(--accent-dark); border-bottom-color: var(--accent); }
+		a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--fg-light); transition: color 0.2s, border-color 0.2s; }
+		a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 		ul { list-style: none; }
 		img { max-width: 100%; }
 		::selection { background: var(--accent); color: #fff; }
 
-		h1, h2, h3, h4, h5, h6 {
-			color: var(--ink);
-			font-family: var(--serif);
-			font-weight: 700;
-			line-height: 1.5;
-			margin: 0 0 0.75em 0;
+		h1, h2, h3, h4 {
+			color: var(--fg-bold);
+			font-family: var(--sans);
+			font-weight: 300;
+			line-height: 1.3;
+			letter-spacing: 0.06em;
+			margin: 0 0 1rem 0;
 		}
-		h2 { font-size: 1.5em; }
-		h3 { font-size: 1.125em; }
+		h2 { font-size: 2.1rem; }
+		h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: 0.03em; }
 
-		/* ============ LAYOUT ============ */
-		#wrapper {
-			display: flex;
-			align-items: stretch;
+		#wrapper { max-width: 100%; }
+
+		/* ============ TOP BAR ============ */
+		#topbar {
+			position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+			height: 4.2rem; display: flex; align-items: center; justify-content: space-between;
+			padding: 0 2rem; background: var(--bg);
+			border-bottom: 1px solid var(--border-light);
+			backdrop-filter: blur(8px);
+		}
+		#topbar .tb-left { font-size: 0.8rem; color: var(--fg-light); letter-spacing: 0.08em; }
+		#topbar .tb-logo { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.18em; color: var(--fg-bold); border-bottom: 0; }
+		#topbar .tb-logo span { color: var(--accent); }
+		#topbar .tb-right { display: flex; align-items: center; gap: 0.7rem; }
+		#topbar .tb-icon {
+			width: 2.3rem; height: 2.3rem; border-radius: 50%;
+			border: 1px solid var(--border); display: grid; place-items: center;
+			font-size: 0.85rem; color: var(--fg); transition: all 0.2s; background: transparent;
+		}
+		#topbar .tb-icon:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+		#menuBtn {
+			display: none; border: 1px solid var(--border); background: transparent; color: var(--fg);
+			font-family: var(--sans); font-weight: 600; font-size: 0.75rem;
+			letter-spacing: 0.25em; text-transform: uppercase;
+			padding: 0.85em 1.6em; cursor: pointer; border-radius: 0.3em; transition: all 0.2s;
+		}
+		#menuBtn:hover { border-color: var(--accent); color: var(--accent); }
+
+		/* ============ NAV (desktop inline / mobile overlay) ============ */
+		#nav { display: flex; gap: 1.6rem; }
+		#nav a {
+			font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+			letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg);
+			border-bottom: 0; padding: 0.35em 0; transition: color 0.2s;
+		}
+		#nav a:hover, #nav a.active { color: var(--accent); }
+		#navOverlay {
+			position: fixed; inset: 0; z-index: 999; background: var(--bg-alt);
+			display: none; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem;
+		}
+		#navOverlay.open { display: flex; }
+		#navOverlay a {
+			font-family: var(--sans); font-size: 1.15rem; font-weight: 600;
+			letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-bold); border-bottom: 0;
+		}
+		#navOverlay a:hover, #navOverlay a.active { color: var(--accent); }
+		#navOverlay .close {
+			position: absolute; top: 1.6rem; right: 2rem; font-size: 1.6rem; color: var(--fg); cursor: pointer; border-bottom: 0;
 		}
 
-		/* ============ SIDEBAR ============ */
-		#sidebar {
-			flex: 0 0 26em;
-			width: 26em;
-			background: var(--bg-sidebar);
-			border-right: solid 1px var(--border);
-			transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-			position: relative;
-			z-index: 100;
-			min-height: 100vh;
+		/* ============ HERO (giant title) ============ */
+		#header {
+			text-align: center; padding: 11rem 2rem 5rem 2rem;
+			position: relative; min-height: 92vh; display: flex; flex-direction: column;
+			justify-content: center; align-items: center;
 		}
-		#sidebar > .inner {
-			position: sticky;
-			top: 0;
-			height: 100vh;
-			overflow-y: auto;
-			padding: 2.5em 2.2em 2.5em 2.2em;
+		#header::before {
+			content: ''; position: absolute; inset: 0; opacity: 0.05; pointer-events: none;
+			background-image: url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2318bfef' stroke-width='1'%3E%3Cpath d='M42 8 L70 28 L61 62 L23 62 L14 28 Z'/%3E%3Cpath d='M42 36 L52 44 L48 58 L36 58 L32 44 Z'/%3E%3C/g%3E%3C/svg%3E");
 		}
-		#sidebar > .inner > * { border-bottom: solid 2px var(--border); margin: 0 0 3em 0; padding: 0 0 3em 0; }
-		#sidebar > .inner > *:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+		.hero-badge {
+			display: inline-block; margin-bottom: 2.2rem;
+			font-family: var(--arabic); font-size: 1.7rem; color: var(--accent);
+			border: 1px solid var(--border); border-radius: 0.35em; padding: 0.4em 1.2em;
+			background: rgba(24,191,239,0.06);
+		}
+		.hero-title {
+			font-size: clamp(3.4rem, 11vw, 8.5rem); font-weight: 300;
+			line-height: 1; letter-spacing: 0.02em; text-transform: uppercase;
+			margin-bottom: 0.4em;
+		}
+		.hero-title .thin { font-weight: 300; color: var(--fg-bold); }
+		.hero-title .accent { color: var(--accent); }
+		.hero-sub {
+			font-family: var(--sans); font-size: 1.05rem; font-weight: 300;
+			letter-spacing: 0.32em; text-transform: uppercase; color: var(--fg);
+			margin-bottom: 1.6rem;
+		}
+		.hero-sub b { color: var(--fg-bold); font-weight: 600; }
+		.hero-desc { max-width: 42em; color: var(--fg-light); font-size: 0.95rem; margin-bottom: 2.8rem; }
 
-		.sidebar-logo {
-			display: flex; align-items: center; gap: 0.6em;
-			color: var(--ink); font-family: var(--serif); font-size: 1.35em; font-weight: 700;
-			border-bottom: 0;
+		/* ============ BUTTONS ============ */
+		ul.actions { display: flex; gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
+		.button {
+			display: inline-block; padding: 0 2.6em; height: 3.4em; line-height: 3.2em;
+			font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+			letter-spacing: 0.22em; text-transform: uppercase; border-radius: 0.3em;
+			border: 2px solid var(--fg-bold); cursor: pointer; transition: all 0.25s;
+			border-bottom: 2px solid var(--fg-bold); background: transparent; color: var(--fg-bold);
 		}
-		.sidebar-logo:hover { color: var(--ink); }
-		.sidebar-logo .mark {
-			width: 2.2em; height: 2.2em; border-radius: 0.375em; flex: none;
-			background: linear-gradient(135deg, var(--accent), #e94560);
-			color: #fff; display: grid; place-items: center;
-			font-size: 0.85em; box-shadow: 0 0.2em 1em rgba(244, 92, 92, 0.35);
-		}
-		.sidebar-logo small { display: block; font-family: var(--sans); font-size: 0.5em; font-weight: 400; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; }
-
-		header.major {
-			border-bottom: solid 3px var(--accent);
-			display: flex; align-items: flex-end;
-			margin: 0 0 2em 0; padding: 0 0 1em 0; position: relative;
-		}
-		header.major h2 { margin-bottom: 0; font-size: 1.25em; }
-		#menu ul { display: flex; flex-direction: column; gap: 0.35em; }
-		#menu ul li a {
-			display: block; padding: 0.45em 0.9em; border-radius: 0.375em;
-			color: var(--ink); font-family: var(--serif); font-size: 0.9em; font-weight: 700;
-			border-bottom: 0; letter-spacing: 0.02em; transition: all 0.2s;
-		}
-		#menu ul li a:hover { background: #e9ecee; color: var(--accent); }
-		#menu ul li a.active { background: var(--accent); color: #fff; }
-
-		.mini-posts article { margin: 0 0 1.25em 0; }
-		.mini-posts .mini-thumb {
-			height: 5.5em; border-radius: 0.375em; margin-bottom: 0.75em;
-			display: grid; place-items: center; overflow: hidden; position: relative;
-		}
-		.mini-posts .mini-thumb span { font-family: var(--serif); font-weight: 700; color: rgba(255,255,255,0.92); font-size: 1em; position: relative; z-index: 2; }
-		.mini-posts .mini-thumb::after {
-			content: ''; position: absolute; inset: 0; opacity: 0.28;
-			background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
-			background-size: 22px 22px;
-		}
-		.mini-posts p { font-size: 0.85em; line-height: 1.8; }
-
-		ul.contact { display: flex; flex-direction: column; gap: 1em; }
-		ul.contact li { display: flex; gap: 0.85em; align-items: flex-start; font-size: 0.9em; }
-		ul.contact li .icon { color: var(--accent); margin-top: 0.25em; width: 1.2em; text-align: center; }
-		ul.contact li a { color: var(--text); border-bottom: 0; }
-		ul.contact li a:hover { color: var(--accent); }
-
-		#sidebar .social-icons { display: flex; gap: 0.6em; margin-top: 1.4em; }
-		#sidebar .social-icons a {
-			width: 2.4em; height: 2.4em; border-radius: 50%;
-			background: #ffffff; border: solid 1px var(--border);
-			display: grid; place-items: center; color: var(--ink); font-size: 0.95em;
-			transition: all 0.2s;
-		}
-		#sidebar .social-icons a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-
-		footer#sidebar-footer { font-size: 0.8em; color: var(--text-faint); line-height: 1.9; }
-		footer#sidebar-footer a { color: var(--text-faint); }
+		.button:hover { border-color: var(--accent); color: var(--accent); }
+		.button.primary { background: var(--fg-bold); color: var(--bg) !important; border-color: var(--fg-bold); }
+		.button.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; }
+		.button.accent { background: var(--accent); color: #fff !important; border-color: var(--accent); box-shadow: 0 0.4em 1.4em rgba(24,191,239,0.35); }
+		.button.accent:hover { background: #0f9cc7; border-color: #0f9cc7; transform: translateY(-2px); }
+		.button.small { height: 2.9em; line-height: 2.7em; padding: 0 1.9em; font-size: 0.7rem; }
 
 		/* ============ MAIN ============ */
-		#main { flex: 1; min-width: 0; }
-		#main > .inner { max-width: 64em; margin: 0 auto; padding: 0 4em 4em 4em; }
+		#main { max-width: 74em; margin: 0 auto; padding: 0 2rem 4rem 2rem; }
 
-		/* header */
-		#header {
-			display: flex; justify-content: space-between; align-items: center;
-			padding: 3em 0 2.5em 0; border-bottom: solid 2px var(--border);
-			margin-bottom: 4em;
+		/* section headers (Massively bordered treatment) */
+		header.major {
+			border-top: 2px solid var(--border);
+			border-bottom: 2px solid var(--border);
+			text-align: center; padding: 2.6rem 0; margin: 4.5rem 0 3.5rem 0;
 		}
-		#header .logo { font-family: var(--serif); font-weight: 700; font-size: 1.25em; color: var(--ink); border-bottom: 0; }
-		#header .logo strong { color: var(--accent); }
-		#header .logo .tag { font-family: var(--sans); font-weight: 400; font-size: 0.55em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); display: block; }
-		#header .icons { display: flex; gap: 0.6em; }
-		#header .icons a {
-			width: 2.2em; height: 2.2em; border-radius: 50%;
-			border: solid 1px var(--border); display: grid; place-items: center;
-			color: var(--ink); font-size: 0.9em; transition: all 0.2s; background: var(--bg);
-		}
-		#header .icons a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+		header.major h2 { font-size: 2.3rem; text-transform: uppercase; letter-spacing: 0.28em; margin-bottom: 0.5em; }
+		header.major p { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-light); }
 
-		/* menu toggle (mobile) */
-		#menuToggle {
-			display: none; border: 0; background: var(--accent); color: #fff;
-			font-family: var(--serif); font-weight: 700; font-size: 0.8em;
-			letter-spacing: 0.075em; text-transform: uppercase;
-			padding: 0.9em 1.4em; border-radius: 0.375em; cursor: pointer;
+		/* ============ INTRO / FEATURED ============ */
+		#intro { text-align: center; margin-bottom: 1rem; }
+		#intro h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); text-transform: none; letter-spacing: 0.04em; margin-bottom: 0.8rem; }
+		#intro .intro-text { max-width: 44em; margin: 0 auto 2.6rem auto; color: var(--fg); }
+		#intro .intro-text b { color: var(--fg-bold); }
+		.featured-image {
+			position: relative; border-radius: 0.4em; overflow: hidden; margin-bottom: 2.6rem;
+			height: 26em; display: grid; place-items: center; border: 1px solid var(--border-light);
 		}
+		.featured-image .orb { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.45; }
+		.featured-image .orb1 { width: 20em; height: 20em; background: rgba(24,191,239,0.5); top: -4em; left: -4em; }
+		.featured-image .orb2 { width: 18em; height: 18em; background: rgba(233,69,96,0.4); bottom: -4em; right: -3em; }
+		.featured-image .orb3 { width: 14em; height: 14em; background: rgba(232,182,76,0.35); top: 40%; left: 55%; }
+		.featured-image .f-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+		.featured-image .f-arabic { font-family: var(--arabic); font-size: 3.4rem; color: #fff; text-shadow: 0 0.15em 0.8em rgba(0,0,0,0.4); margin-bottom: 0.3em; }
+		.featured-image .f-en { font-family: var(--sans); letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
 
-		/* banner */
-		#banner { display: flex; align-items: center; gap: 4em; margin-bottom: 4em; }
-		#banner .content { flex: 1; }
-		#banner h1 { font-size: 3em; line-height: 1.15; margin-bottom: 0.5em; }
-		#banner h1 .accent { color: var(--accent); }
-		#banner .arabic-greet { font-family: var(--arabic); font-size: 1.4em; color: var(--accent); margin-bottom: 0.6em; display: block; }
-		#banner p { margin-bottom: 1.2em; }
-		#banner .image.object {
-			flex: 0 0 18em; height: 20em; border-radius: 0.375em;
-			display: grid; place-items: center; overflow: hidden; position: relative;
-			box-shadow: 0 1.5em 3em rgba(61, 68, 73, 0.15);
-		}
-		#banner .image.object .orb {
-			position: absolute; border-radius: 50%; filter: blur(50px); opacity: 0.5;
-		}
-		#banner .image.object .orb1 { width: 14em; height: 14em; background: #f8a5a5; top: -3em; right: -3em; }
-		#banner .image.object .orb2 { width: 12em; height: 12em; background: #f5d78a; bottom: -3em; left: -2em; }
-		#banner .image.object .callig { font-family: var(--arabic); font-size: 3.2em; color: #fff; text-shadow: 0 0.15em 0.6em rgba(0,0,0,0.25); position: relative; z-index: 2; }
-		#banner .image.object .mono { font-family: var(--serif); font-size: 0.9em; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85); position: relative; z-index: 2; margin-top: 1em; }
-
-		/* buttons */
-		ul.actions { display: flex; gap: 1em; flex-wrap: wrap; margin-top: 1.5em; }
-		.button {
-			display: inline-block; padding: 0 2.25em; height: 3.5em; line-height: 3.4em;
-			font-family: var(--serif); font-size: 0.8em; font-weight: 700;
-			letter-spacing: 0.075em; text-transform: uppercase; border-radius: 0.375em;
-			border: solid 2px transparent; cursor: pointer; transition: all 0.2s;
-			border-bottom: 0;
-		}
-		.button.primary { background: var(--accent); color: #fff !important; box-shadow: 0 0.4em 1.2em rgba(244, 92, 92, 0.3); }
-		.button.primary:hover { background: var(--accent-light); transform: translateY(-2px); }
-		.button.ghost { background: transparent; border-color: var(--ink); color: var(--ink) !important; }
-		.button.ghost:hover { border-color: var(--accent); color: var(--accent) !important; }
-
-		/* sections */
-		section.section { margin: 0 0 5em 0; }
-		header.major.main { margin-top: 3em; }
-		header.major.main h2 { font-size: 2em; }
-		header.major.main p { font-family: var(--serif); font-size: 0.95em; font-weight: 400; letter-spacing: 0.075em; text-transform: uppercase; color: var(--text-faint); margin-top: -0.4em; }
-
-		/* features (skills) */
-		.features {
-			display: grid; grid-template-columns: repeat(2, 1fr);
-			gap: 2em; margin-top: 2em;
-		}
-		.features article { display: flex; gap: 1.5em; }
-		.features .icon {
-			flex: none; width: 3.25em; height: 3.25em; border-radius: 0.375em;
-			background: var(--accent); color: #fff; display: grid; place-items: center;
-			font-size: 1.25em; box-shadow: 0 0.3em 1em rgba(244, 92, 92, 0.28);
-		}
-		.features h3 { margin-bottom: 0.4em; }
-		.features p { font-size: 0.92em; line-height: 1.95; }
-		.features p span { color: var(--text-strong); font-weight: 600; }
-		.features p .sep { color: var(--text-faint); }
-
-		/* posts (projects) */
+		/* ============ POSTS (projects) ============ */
 		.posts {
 			display: grid; grid-template-columns: repeat(2, 1fr);
-			gap: 3em 4em; margin-top: 1em;
+			gap: 3.5em 4em;
 		}
 		.posts article { display: flex; flex-direction: column; }
 		.posts .image {
-			display: block; border-radius: 0.375em; overflow: hidden;
-			border: solid 1px var(--border); margin-bottom: 1.25em;
-			height: 12em; position: relative; border-bottom: 0;
+			display: block; border-radius: 0.35em; overflow: hidden; margin-bottom: 1.4em;
+			height: 13em; position: relative; border: 1px solid var(--border-light);
+			border-bottom: 0; transition: transform 0.3s, box-shadow 0.3s;
 		}
-		.posts .image .thumb-inner {
-			height: 100%; display: grid; place-items: center; position: relative;
-		}
+		.posts .image:hover { transform: translateY(-4px); box-shadow: 0 1em 2.5em rgba(0,0,0,0.45); }
+		.posts .image .thumb-inner { height: 100%; display: grid; place-items: center; position: relative; }
 		.posts .image .thumb-inner::after {
-			content: ''; position: absolute; inset: 0; opacity: 0.25;
+			content: ''; position: absolute; inset: 0; opacity: 0.22;
 			background-image: linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
 			background-size: 24px 24px;
 		}
-		.posts .image .thumb-label { font-family: var(--serif); font-weight: 700; font-size: 1.5em; color: rgba(255,255,255,0.94); text-shadow: 0 0.1em 0.5em rgba(0,0,0,0.3); position: relative; z-index: 2; }
+		.posts .image .thumb-label { font-family: var(--sans); font-weight: 600; font-size: 1.6rem; color: rgba(255,255,255,0.95); letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 0.1em 0.5em rgba(0,0,0,0.35); position: relative; z-index: 2; }
 		.posts .image .badge {
-			position: absolute; top: 0.9em; right: 0.9em; z-index: 3;
-			font-family: var(--serif); font-size: 0.62em; font-weight: 700;
-			letter-spacing: 0.08em; text-transform: uppercase;
-			padding: 0.35em 0.85em; border-radius: 2em; backdrop-filter: blur(4px);
+			position: absolute; top: 1em; right: 1em; z-index: 3;
+			font-family: var(--sans); font-size: 0.6rem; font-weight: 600;
+			letter-spacing: 0.14em; text-transform: uppercase;
+			padding: 0.4em 1em; border-radius: 2em; backdrop-filter: blur(4px);
 		}
-		.badge-flagship { background: #fff; color: var(--accent); }
+		.badge-flagship { background: var(--accent); color: #fff; }
 		.badge-latest { background: #2d6a4f; color: #fff; }
 		.badge-wip { background: rgba(120, 53, 15, 0.92); color: #fff; }
-		.badge-prod { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
-		.thumb-diwanic { background: linear-gradient(135deg, #1a365d, #2f6f4f); }
-		.thumb-crewai { background: linear-gradient(135deg, #7c2d12, #c2410c); }
-		.thumb-fraud { background: linear-gradient(135deg, #1e1b4b, #6d28d9); }
-		.thumb-rag { background: linear-gradient(135deg, #134e4a, #0f766e); }
-		.thumb-hadith { background: linear-gradient(135deg, #3b2f1e, #7c5c1e); }
-		.thumb-dvc { background: linear-gradient(135deg, #172554, #1e40af); }
-		.thumb-reg { background: linear-gradient(135deg, #312e81, #4f46e5); }
-		.posts h3 { margin-bottom: 0.4em; }
-		.posts .meta { font-family: var(--serif); font-size: 0.72em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.9em; }
-		.posts p.desc { font-size: 0.92em; line-height: 1.95; margin-bottom: 1em; flex: 1; }
-		.posts .tags { display: flex; flex-wrap: wrap; gap: 0.5em; margin-bottom: 1.2em; }
+		.badge-prod { background: rgba(255,255,255,0.16); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+		.thumb-diwanic { background: linear-gradient(135deg, #0e2a47, #1f5f43); }
+		.thumb-crewai { background: linear-gradient(135deg, #4a1d0e, #9c3a10); }
+		.thumb-fraud { background: linear-gradient(135deg, #14123a, #4c1d95); }
+		.thumb-rag { background: linear-gradient(135deg, #0b3a37, #0b6b63); }
+		.thumb-hadith { background: linear-gradient(135deg, #2b2113, #5c4516); }
+		.thumb-dvc { background: linear-gradient(135deg, #0f2140, #16306e); }
+		.thumb-reg { background: linear-gradient(135deg, #201d5c, #3730a3); }
+		.posts .meta { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-light); margin-bottom: 0.5em; }
+		.posts .meta .dot { color: var(--accent); }
+		.posts h3 { margin-bottom: 0.5em; }
+		.posts p.desc { font-size: 0.9rem; line-height: 1.9; color: var(--fg-light); margin-bottom: 1.1em; flex: 1; }
+		.posts .tags { display: flex; flex-wrap: wrap; gap: 0.5em; margin-bottom: 1.4em; }
 		.posts .tags span {
-			font-family: var(--serif); font-size: 0.68em; font-weight: 700;
-			letter-spacing: 0.04em; text-transform: uppercase;
-			padding: 0.3em 0.9em; border: solid 1px var(--border); border-radius: 2em; color: var(--text);
+			font-family: var(--sans); font-size: 0.62rem; font-weight: 600;
+			letter-spacing: 0.12em; text-transform: uppercase;
+			padding: 0.35em 1em; border: 1px solid var(--border); border-radius: 2em; color: var(--fg);
 			transition: all 0.2s;
 		}
 		.posts .tags span:hover { border-color: var(--accent); color: var(--accent); }
-		.posts .actions { margin-top: 0; }
-		.posts .actions .button { height: 2.9em; line-height: 2.8em; padding: 0 1.7em; font-size: 0.72em; }
-		.posts .actions .button.muted { background: transparent; border-color: var(--border); color: var(--text) !important; }
-		.posts .actions .button.muted:hover { border-color: var(--accent); color: var(--accent) !important; }
+		.posts .actions { justify-content: flex-start; }
+		.posts .actions .button { border-color: var(--border); color: var(--fg-bold); }
+		.posts .actions .button:hover { border-color: var(--accent); color: var(--accent); }
+		.posts .actions .button.muted { color: var(--fg-light); }
 
-		/* certifications */
-		.certs { margin-top: 2em; display: flex; flex-direction: column; gap: 1.4em; }
+		/* ============ SKILLS ============ */
+		.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2em; }
+		.skill-card {
+			border: 1px solid var(--border-light); border-radius: 0.35em;
+			padding: 2.2em 1.6em; text-align: center; background: var(--bg-alt);
+			transition: all 0.3s;
+		}
+		.skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 1em 2.5em rgba(0,0,0,0.4); }
+		.skill-card .icon {
+			width: 3.2em; height: 3.2em; margin: 0 auto 1.2em auto; border-radius: 50%;
+			background: var(--accent); color: #fff; display: grid; place-items: center;
+			font-size: 1.15em; box-shadow: 0 0.3em 1.2em rgba(24,191,239,0.35);
+		}
+		.skill-card h3 { font-size: 1.1rem; margin-bottom: 0.9em; }
+		.skill-card ul { display: flex; flex-direction: column; gap: 0.35em; }
+		.skill-card li { font-size: 0.82rem; color: var(--fg-light); }
+		.skill-card li b { color: var(--fg); font-weight: 300; }
+
+		/* ============ CERTIFICATIONS ============ */
+		.certs { display: flex; flex-direction: column; gap: 1.2em; max-width: 52em; margin: 0 auto; }
 		.cert-row {
 			display: flex; align-items: center; gap: 1.4em;
-			border: solid 1px var(--border); border-left: solid 4px var(--accent);
-			border-radius: 0.375em; padding: 1.2em 1.6em; background: #fff;
-			transition: all 0.2s;
+			border: 1px solid var(--border-light); border-left: 4px solid var(--accent);
+			border-radius: 0.35em; padding: 1.3em 1.7em; background: var(--bg-alt);
+			transition: all 0.25s;
 		}
-		.cert-row:hover { box-shadow: 0 0.5em 1.5em rgba(61, 68, 73, 0.08); transform: translateX(4px); }
-		.cert-row .icon { width: 3em; height: 3em; flex: none; border-radius: 50%; background: var(--bg-sidebar); border: solid 1px var(--border); display: grid; place-items: center; color: var(--accent); font-size: 1em; }
+		.cert-row:hover { transform: translateX(6px); border-color: var(--border); }
+		.cert-row .icon { color: var(--accent); font-size: 1.3em; width: 2em; text-align: center; flex: none; }
 		.cert-row .cert-body { flex: 1; }
-		.cert-row h3 { margin-bottom: 0.1em; font-size: 1em; }
-		.cert-row .issuer { font-size: 0.8em; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; }
-		.cert-row .verify { font-family: var(--serif); font-size: 0.75em; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
-		.cert-note { margin-top: 1.6em; font-size: 0.85em; color: var(--text-faint); font-style: italic; }
+		.cert-row h3 { margin-bottom: 0.1em; font-size: 1.05rem; }
+		.cert-row .issuer { font-size: 0.75rem; color: var(--fg-light); text-transform: uppercase; letter-spacing: 0.12em; }
+		.cert-row .verify { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 0; white-space: nowrap; }
+		.cert-row .verify:hover { color: #fff; }
+		.cert-note { text-align: center; margin-top: 2em; font-size: 0.82rem; color: var(--fg-light); font-style: italic; }
 
-		/* about */
-		.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3em; margin-top: 1em; }
-		.about-grid p { margin-bottom: 1.2em; }
-		.about-grid p b { color: var(--text-strong); }
+		/* ============ ABOUT ============ */
+		.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3em; align-items: start; }
+		.about-grid p { margin-bottom: 1.2em; color: var(--fg-light); }
+		.about-grid p b { color: var(--fg-bold); font-weight: 400; }
 		.quote-card {
-			border: solid 1px var(--border); border-left: solid 4px var(--accent);
-			border-radius: 0.375em; padding: 2em; background: var(--bg-sidebar); align-self: start;
+			border: 1px solid var(--border-light); border-left: 4px solid var(--accent);
+			border-radius: 0.35em; padding: 2em; background: var(--bg-alt);
 		}
-		.quote-card .arabic { font-family: var(--arabic); font-size: 1.6em; color: var(--accent); margin-bottom: 0.5em; line-height: 1.6; }
-		.quote-card p { margin-bottom: 0.5em; font-size: 0.95em; }
-		.quote-card .trans { font-size: 0.8em; color: var(--text-faint); }
+		.quote-card .arabic { font-family: var(--arabic); font-size: 1.9em; color: var(--accent); margin-bottom: 0.5em; line-height: 1.6; }
+		.quote-card p { color: var(--fg) !important; margin-bottom: 0.4em; }
+		.quote-card .trans { font-size: 0.78rem; color: var(--fg-light); }
 
-		/* contact CTA */
-		.contact-cta {
-			text-align: center; border: solid 1px var(--border); border-radius: 0.5em;
-			padding: 4em 2em; background: var(--bg-sidebar); position: relative; overflow: hidden;
+		/* ============ FOOTER ============ */
+		#footer {
+			border-top: 2px solid var(--border); margin-top: 5rem;
+			background: var(--bg-alt); padding: 4rem 2rem 2rem 2rem; text-align: center;
 		}
-		.contact-cta::before {
-			content: ''; position: absolute; inset: 0; opacity: 0.05;
-			background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f56a6a' stroke-width='1'%3E%3Cpath d='M36 6 L60 24 L52 54 L20 54 L12 24 Z'/%3E%3C/g%3E%3C/svg%3E");
+		#footer .inner { max-width: 74em; margin: 0 auto; }
+		#footer .foot-arabic { font-family: var(--arabic); font-size: 1.8em; color: var(--accent); margin-bottom: 0.6em; }
+		#footer .contact-cols {
+			display: grid; grid-template-columns: repeat(3, 1fr); gap: 2em;
+			margin: 3em 0; border-top: 1px solid var(--border-light); padding-top: 3em;
 		}
-		.contact-cta h2 { position: relative; }
-		.contact-cta p { max-width: 34em; margin: 0 auto 1.5em auto; position: relative; }
-		.contact-cta .actions { justify-content: center; position: relative; }
+		#footer .col h4 { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-light); margin-bottom: 1.2em; }
+		#footer .col p, #footer .col a { font-size: 0.9rem; color: var(--fg); }
+		#footer .col .icon { color: var(--accent); margin-right: 0.5em; }
+		#footer .social { display: flex; gap: 0.7em; justify-content: center; margin-top: 0.4em; }
+		#footer .social a {
+			width: 2.7em; height: 2.7em; border-radius: 50%;
+			border: 1px solid var(--border); display: grid; place-items: center;
+			font-size: 0.95rem; color: var(--fg); transition: all 0.2s;
+		}
+		#footer .social a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+		#footer .copyright {
+			border-top: 1px solid var(--border-light); padding-top: 2.5em;
+			font-size: 0.75rem; color: var(--fg-light); letter-spacing: 0.08em;
+		}
+		#footer .copyright a { color: var(--fg-light); }
 
-		/* footer */
-		#footer-main {
-			border-top: solid 2px var(--border); padding: 2.5em 0 0 0;
-			text-align: center; font-size: 0.8em; color: var(--text-faint);
-		}
-		#footer-main .foot-arabic { font-family: var(--arabic); font-size: 1.6em; color: var(--accent); margin-bottom: 0.4em; }
-		#footer-main a { color: var(--text-faint); }
-
-		/* reveal */
-		.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+		/* ============ REVEAL ============ */
+		.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s ease; }
 		.reveal.visible { opacity: 1; transform: translateY(0); }
 
 		/* ============ RESPONSIVE ============ */
-		@media screen and (max-width: 1024px) {
-			.posts { grid-template-columns: 1fr; }
+		@media screen and (max-width: 1100px) {
+			.skills-grid { grid-template-columns: repeat(2, 1fr); }
 		}
 		@media screen and (max-width: 860px) {
-			#sidebar { margin-left: -26em; position: fixed; top: 0; bottom: 0; left: 0; box-shadow: 0 0 3em rgba(0,0,0,0.25); }
-			#sidebar.active { margin-left: 0; }
-			#menuToggle { display: inline-block; }
-			#header { padding-top: 1.5em; }
-			#main > .inner { padding: 0 2em 3em 2em; }
-			#banner { flex-direction: column-reverse; gap: 2em; }
-			#banner .image.object { flex: none; width: 100%; height: 15em; }
-			#banner h1 { font-size: 2.2em; }
-			.features { grid-template-columns: 1fr; }
+			#nav { display: none; }
+			#menuBtn { display: inline-block; }
+			#topbar .tb-left { display: none; }
+			.posts { grid-template-columns: 1fr; }
 			.about-grid { grid-template-columns: 1fr; }
-			body.sidebar-open { overflow: hidden; }
+			.contact-cols { grid-template-columns: 1fr; }
+			#header { padding-top: 9rem; min-height: 80vh; }
+			.featured-image { height: 18em; }
 		}
 		@media (prefers-reduced-motion: reduce) {
 			*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -362,374 +340,333 @@
 </head>
 <body class="is-preload">
 
-	<div id="wrapper">
+	<!-- ============ TOP BAR ============ -->
+	<div id="topbar">
+		<div class="tb-left">© 2026 · Kuala Lumpur, MY</div>
+		<a href="#top" class="tb-logo">AMAR <span>FAUZIE</span></a>
+		<div class="tb-right">
+			<nav id="nav">
+				<a href="#projects" class="nav-link">Projects</a>
+				<a href="#skills" class="nav-link">Skills</a>
+				<a href="#certifications" class="nav-link">Certs</a>
+				<a href="#about" class="nav-link">About</a>
+				<a href="#contact" class="nav-link">Contact</a>
+			</nav>
+			<a class="tb-icon" href="https://github.com/amarpoji" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+			<a class="tb-icon" href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+			<a class="tb-icon" href="mailto:amar.fauzie.dev@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+			<button id="menuBtn" onclick="openMenu()">Menu</button>
+		</div>
+	</div>
 
-		<!-- ============ SIDEBAR ============ -->
-		<div id="sidebar">
-			<div class="inner">
+	<!-- mobile nav overlay -->
+	<div id="navOverlay">
+		<span class="close" onclick="closeMenu()">&times;</span>
+		<a href="#top" class="nav-link" onclick="closeMenu()">Home</a>
+		<a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a>
+		<a href="#skills" class="nav-link" onclick="closeMenu()">Skills</a>
+		<a href="#certifications" class="nav-link" onclick="closeMenu()">Certifications</a>
+		<a href="#about" class="nav-link" onclick="closeMenu()">About</a>
+		<a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
+	</div>
 
-				<!-- Logo -->
-				<a href="#top" class="sidebar-logo" onclick="closeSidebar()">
-					<span class="mark">AF</span>
-					<span>Amar Fauzie<small>Data Scientist &amp; AI Engineer</small></span>
-				</a>
+	<!-- ============ HERO ============ -->
+	<header id="header">
+		<span class="hero-badge" dir="rtl">السَّلَامُ عَلَيْكُمْ</span>
+		<h1 class="hero-title">AMAR <span class="accent">FAUZIE</span></h1>
+		<p class="hero-sub"><b>Data Scientist</b> · <b>AI Engineer</b> · NLP &amp; RAG Specialist</p>
+		<p class="hero-desc">I build intelligent language systems — hybrid retrieval engines for classical Arabic poetry, multi-agent pipelines that authenticate Hadith, and MLOps foundations that keep models reproducible and observable in production.</p>
+		<ul class="actions">
+			<li><a href="#projects" class="button accent large">Explore My Work</a></li>
+			<li><a href="#contact" class="button">Get in Touch</a></li>
+		</ul>
+	</header>
 
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major"><h2>Menu</h2></header>
-					<ul>
-						<li><a href="#top" class="nav-link">Homepage</a></li>
-						<li><a href="#projects" class="nav-link">Projects</a></li>
-						<li><a href="#skills" class="nav-link">Core Skills</a></li>
-						<li><a href="#certifications" class="nav-link">Certifications</a></li>
-						<li><a href="#about" class="nav-link">About Me</a></li>
-						<li><a href="#contact" class="nav-link">Get in Touch</a></li>
+	<!-- ============ MAIN ============ -->
+	<div id="main">
+
+		<!-- Intro / featured -->
+		<section id="intro" class="reveal">
+			<h2>Building Intelligent Language Systems</h2>
+			<p class="intro-text">
+				My path is unusual: a background in <b>Arabic literature and Islamic theology</b> led me to data science —
+				and it turns out classical text analysis, isnad authentication, and poetry meter are excellent training for
+				<b>NLP, information retrieval, and trustworthy AI</b>.
+			</p>
+			<div class="featured-image">
+				<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+				<div class="f-content">
+					<div class="f-arabic" dir="rtl">العِلْمُ نُورٌ</div>
+					<div class="f-en">Knowledge is Light</div>
+				</div>
+			</div>
+			<ul class="actions">
+				<li><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="button">Featured Project — Diwanic</a></li>
+			</ul>
+		</section>
+
+		<!-- Projects -->
+		<section id="projects">
+			<header class="major reveal">
+				<h2>Featured Projects</h2>
+				<p>Systems I've designed, built, and shipped</p>
+			</header>
+			<div class="posts">
+
+				<article class="reveal">
+					<a class="image" href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener">
+						<div class="thumb-inner thumb-diwanic">
+							<span class="badge badge-flagship">Flagship</span>
+							<span class="thumb-label">ديوان</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> FastAPI <span class="dot">·</span> Qdrant</div>
+					<h3>Diwanic — Arabic Poetry Retrieval</h3>
+					<p class="desc">Production hybrid search engine for classical Arabic poetry: semantic + BM25 retrieval with RRF fusion, Prefect orchestration, Qdrant vectors, and a PostgreSQL truth layer — precise at verse and poem level.</p>
+					<div class="tags"><span>FastAPI</span><span>Qdrant</span><span>PostgreSQL</span><span>Prefect</span><span>Docker</span></div>
+					<ul class="actions"><li><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+				</article>
+
+				<article class="reveal">
+					<a class="image" href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener">
+						<div class="thumb-inner thumb-crewai">
+							<span class="badge badge-latest">Latest</span>
+							<span class="thumb-label">Hadith</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> CrewAI</div>
+					<h3>CrewAI Hadith Research Agent</h3>
+					<p class="desc">Multi-agent pipeline that researches, authenticates, and writes about Hadith — confined to trusted sources (sunnah.com, shamela.ws) so it never cites unreliable content. Research → Validate → Write.</p>
+					<div class="tags"><span>CrewAI</span><span>Multi-Agent</span><span>Pydantic v2</span><span>Arabic NLP</span></div>
+					<ul class="actions"><li><a href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+				</article>
+
+				<article class="reveal">
+					<a class="image" href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener">
+						<div class="thumb-inner thumb-fraud">
+							<span class="badge badge-prod">Production</span>
+							<span class="thumb-label">Fraud</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> React</div>
+					<h3>AI Fraud Detection System</h3>
+					<p class="desc">Full-stack ML fraud detection: DVC-versioned data, MLflow experiment tracking, Docker deployment, and a React UI with real-time inference.</p>
+					<div class="tags"><span>scikit-learn</span><span>DVC</span><span>MLflow</span><span>Docker</span><span>React</span></div>
+					<ul class="actions">
+						<li><a href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener" class="button small">Repo</a></li>
+						<li><a href="https://github.com/amarpoji/ai-fraud-detector-streamlit" target="_blank" rel="noopener" class="button small muted">Streamlit</a></li>
 					</ul>
-				</nav>
+				</article>
 
-				<!-- Focus areas -->
-				<section>
-					<header class="major"><h2>Focus Areas</h2></header>
-					<div class="mini-posts">
-						<article>
-							<div class="mini-thumb thumb-rag"><span>NLP &amp; RAG</span></div>
-							<p>Hybrid retrieval engines that understand Arabic morphology and semantics.</p>
-						</article>
-						<article>
-							<div class="mini-thumb thumb-crewai"><span>Multi-Agent AI</span></div>
-							<p>Agentic pipelines that research, validate, and write — only from trusted sources.</p>
-						</article>
-						<article>
-							<div class="mini-thumb thumb-dvc"><span>MLOps</span></div>
-							<p>Reproducible, observable, Dockerized ML systems built to ship.</p>
-						</article>
-					</div>
-				</section>
+				<article class="reveal">
+					<a class="image" href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener">
+						<div class="thumb-inner thumb-rag">
+							<span class="badge badge-prod">Production</span>
+							<span class="thumb-label">RAG</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> OpenSearch</div>
+					<h3>Simple RAG System</h3>
+					<p class="desc">Local retrieval-augmented generation with OpenSearch vectors, LLM integration, OCR document ingestion, and a Streamlit interface for context-aware Q&amp;A.</p>
+					<div class="tags"><span>OpenSearch</span><span>LangChain</span><span>OCR</span><span>Streamlit</span></div>
+					<ul class="actions"><li><a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+				</article>
 
-				<!-- Get in touch -->
-				<section>
-					<header class="major"><h2>Get in touch</h2></header>
-					<p>Open to Data Science &amp; AI Engineering opportunities.</p>
-					<ul class="contact">
-						<li class="icon solid fa-envelope"><a href="mailto:amar.fauzie.dev@gmail.com">amar.fauzie.dev@gmail.com</a></li>
-						<li class="icon solid fa-map-marker-alt">Malaysia · Remote-ready</li>
-					</ul>
-					<div class="social-icons">
-						<a href="https://github.com/amarpoji" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-						<a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-						<a href="mailto:amar.fauzie.dev@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-					</div>
-				</section>
+				<article class="reveal">
+					<a class="image" href="#projects">
+						<div class="thumb-inner thumb-hadith">
+							<span class="badge badge-wip">WIP</span>
+							<span class="thumb-label">Graph</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> GraphRAG</div>
+					<h3>HadithGraph</h3>
+					<p class="desc">Semantic knowledge graph over Hadith literature using Microsoft GraphRAG — entity extraction, relationship mapping, and intelligent retrieval for scholarship research.</p>
+					<div class="tags"><span>GraphRAG</span><span>Knowledge Graphs</span><span>Arabic NLP</span></div>
+					<ul class="actions"><li><a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="button small muted">Coming Soon</a></li></ul>
+				</article>
 
-				<!-- Footer -->
-				<footer id="sidebar-footer">
-					<p class="copyright">&copy; 2026 Amar Fauzie. Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a>.</p>
-				</footer>
+				<article class="reveal">
+					<a class="image" href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener">
+						<div class="thumb-inner thumb-dvc">
+							<span class="badge badge-prod">Production</span>
+							<span class="thumb-label">DVC</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> DVC</div>
+					<h3>ML Pipeline with DVC</h3>
+					<p class="desc">Reproducible ML pipeline: data &amp; model versioning with DVC, automated stages, and experiment tracking — MLOps best practices end to end.</p>
+					<div class="tags"><span>DVC</span><span>scikit-learn</span><span>MLOps</span></div>
+					<ul class="actions"><li><a href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+				</article>
+
+				<article class="reveal">
+					<a class="image" href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener">
+						<div class="thumb-inner thumb-reg">
+							<span class="badge badge-prod">Production</span>
+							<span class="thumb-label">E2E</span>
+						</div>
+					</a>
+					<div class="meta">2026 <span class="dot">·</span> Python <span class="dot">·</span> Flask</div>
+					<h3>End-to-End ML Regression</h3>
+					<p class="desc">Complete regression project lifecycle — data collection, feature engineering, model selection, evaluation, and deployment with monitoring.</p>
+					<div class="tags"><span>pandas</span><span>scikit-learn</span><span>Flask</span></div>
+					<ul class="actions"><li><a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener" class="button small">Repo</a></li></ul>
+				</article>
 
 			</div>
-		</div>
+		</section>
 
-		<!-- ============ MAIN ============ -->
-		<div id="main">
-			<div class="inner" id="top">
-
-				<!-- Header -->
-				<header id="header">
-					<a href="#top" class="logo">Muhammad Amar Fauzie <strong>Bin Ismail</strong><span class="tag">Data Science · NLP · AI Engineering</span></a>
-					<button id="menuToggle" onclick="toggleSidebar()">Menu</button>
-					<ul class="icons">
-						<li><a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="icon brands fa-github" aria-label="GitHub"></a></li>
-						<li><a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" class="icon brands fa-linkedin-in" aria-label="LinkedIn"></a></li>
-						<li><a href="mailto:amar.fauzie.dev@gmail.com" class="icon solid fa-envelope" aria-label="Email"></a></li>
-					</ul>
-				</header>
-
-				<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<span class="arabic-greet" dir="rtl">السَّلَامُ عَلَيْكُمْ</span>
-						<h1>Hi, I'm Amar<br />building <span class="accent">intelligent language systems</span></h1>
-						<p>I turn language into structured, searchable, trustworthy intelligence — from hybrid retrieval engines for classical Arabic poetry to multi-agent pipelines that authenticate Hadith. Backed by clean MLOps: DVC, MLflow, Docker, and CI/CD.</p>
-						<ul class="actions">
-							<li><a href="#projects" class="button primary">Explore My Work</a></li>
-							<li><a href="#contact" class="button ghost">Get in Touch</a></li>
-						</ul>
-					</div>
-					<span class="image object">
-						<div class="orb orb1"></div><div class="orb orb2"></div>
-						<div>
-							<div class="callig" dir="rtl">العِلْمُ نُورٌ</div>
-							<div class="mono">Knowledge is Light</div>
-						</div>
-					</span>
-				</section>
-
-				<!-- ============ PROJECTS ============ -->
-				<section id="projects" class="section">
-					<header class="major main reveal">
-						<h2>Featured Projects</h2>
-						<p>Systems I've designed, built, and shipped</p>
-					</header>
-					<div class="posts">
-
-						<!-- Diwanic -->
-						<article class="reveal">
-							<a class="image" href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener">
-								<div class="thumb-inner thumb-diwanic">
-									<span class="badge badge-flagship">Flagship</span>
-									<span class="thumb-label">ديوان</span>
-								</div>
-							</a>
-							<h3>Diwanic — Arabic Poetry Retrieval</h3>
-							<div class="meta">2026 · FastAPI · Qdrant</div>
-							<p class="desc">Production hybrid search engine for classical Arabic poetry: semantic + BM25 retrieval with RRF fusion, Prefect orchestration, Qdrant vectors, and a PostgreSQL truth layer. Built for precision at verse and poem level.</p>
-							<div class="tags"><span>FastAPI</span><span>Qdrant</span><span>PostgreSQL</span><span>Prefect</span><span>Docker</span></div>
-							<ul class="actions"><li><a href="https://github.com/amarpoji/Diwanic" target="_blank" rel="noopener" class="button primary">Repo</a></li></ul>
-						</article>
-
-						<!-- CrewAI Hadith Agent -->
-						<article class="reveal">
-							<a class="image" href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener">
-								<div class="thumb-inner thumb-crewai">
-									<span class="badge badge-latest">Latest</span>
-									<span class="thumb-label">Hadith</span>
-								</div>
-							</a>
-							<h3>CrewAI Hadith Research Agent</h3>
-							<div class="meta">2026 · Python · CrewAI</div>
-							<p class="desc">Multi-agent pipeline that researches, authenticates, and writes about Hadith — confined to trusted sources (sunnah.com, shamela.ws) so it never cites unreliable content. Research → Validate → Write.</p>
-							<div class="tags"><span>CrewAI</span><span>Multi-Agent</span><span>Pydantic v2</span><span>Arabic NLP</span></div>
-							<ul class="actions"><li><a href="https://github.com/amarpoji/crewai_agent" target="_blank" rel="noopener" class="button primary">Repo</a></li></ul>
-						</article>
-
-						<!-- Fraud Detector -->
-						<article class="reveal">
-							<a class="image" href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener">
-								<div class="thumb-inner thumb-fraud">
-									<span class="badge badge-prod">Production</span>
-									<span class="thumb-label">Fraud</span>
-								</div>
-							</a>
-							<h3>AI Fraud Detection System</h3>
-							<div class="meta">2026 · Python · React</div>
-							<p class="desc">Full-stack ML fraud detection: DVC-versioned data, MLflow experiment tracking, Docker deployment, and a React UI with real-time inference.</p>
-							<div class="tags"><span>scikit-learn</span><span>DVC</span><span>MLflow</span><span>Docker</span><span>React</span></div>
-							<ul class="actions">
-								<li><a href="https://github.com/amarpoji/ai-fraud-detector" target="_blank" rel="noopener" class="button primary">Repo</a></li>
-								<li><a href="https://github.com/amarpoji/ai-fraud-detector-streamlit" target="_blank" rel="noopener" class="button muted">Streamlit</a></li>
-							</ul>
-						</article>
-
-						<!-- Simple RAG -->
-						<article class="reveal">
-							<a class="image" href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener">
-								<div class="thumb-inner thumb-rag">
-									<span class="badge badge-prod">Production</span>
-									<span class="thumb-label">RAG</span>
-								</div>
-							</a>
-							<h3>Simple RAG System</h3>
-							<div class="meta">2026 · Python · OpenSearch</div>
-							<p class="desc">Local retrieval-augmented generation with OpenSearch vectors, LLM integration, OCR document ingestion, and a Streamlit interface for context-aware Q&amp;A.</p>
-							<div class="tags"><span>OpenSearch</span><span>LangChain</span><span>OCR</span><span>Streamlit</span></div>
-							<ul class="actions"><li><a href="https://github.com/amarpoji/SImple_RAG_by_JAMwithAI" target="_blank" rel="noopener" class="button primary">Repo</a></li></ul>
-						</article>
-
-						<!-- HadithGraph -->
-						<article class="reveal">
-							<a class="image" href="#projects">
-								<div class="thumb-inner thumb-hadith">
-									<span class="badge badge-wip">WIP</span>
-									<span class="thumb-label">Graph</span>
-								</div>
-							</a>
-							<h3>HadithGraph</h3>
-							<div class="meta">2026 · GraphRAG</div>
-							<p class="desc">Semantic knowledge graph over Hadith literature using Microsoft GraphRAG — entity extraction, relationship mapping, and intelligent retrieval for scholarship research.</p>
-							<div class="tags"><span>GraphRAG</span><span>Knowledge Graphs</span><span>Arabic NLP</span></div>
-							<ul class="actions"><li><a href="https://github.com/amarpoji" target="_blank" rel="noopener" class="button muted">Coming Soon</a></li></ul>
-						</article>
-
-						<!-- ML Pipeline DVC -->
-						<article class="reveal">
-							<a class="image" href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener">
-								<div class="thumb-inner thumb-dvc">
-									<span class="badge badge-prod">Production</span>
-									<span class="thumb-label">DVC</span>
-								</div>
-							</a>
-							<h3>ML Pipeline with DVC</h3>
-							<div class="meta">2026 · Python · DVC</div>
-							<p class="desc">Reproducible ML pipeline: data &amp; model versioning with DVC, automated stages, and experiment tracking — MLOps best practices end to end.</p>
-							<div class="tags"><span>DVC</span><span>scikit-learn</span><span>MLOps</span></div>
-							<ul class="actions"><li><a href="https://github.com/amarpoji/machine_learning_pipeline-" target="_blank" rel="noopener" class="button primary">Repo</a></li></ul>
-						</article>
-
-						<!-- End-to-End Regression -->
-						<article class="reveal">
-							<a class="image" href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener">
-								<div class="thumb-inner thumb-reg">
-									<span class="badge badge-prod">Production</span>
-									<span class="thumb-label">E2E</span>
-								</div>
-							</a>
-							<h3>End-to-End ML Regression</h3>
-							<div class="meta">2026 · Python · Flask</div>
-							<p class="desc">Complete regression project lifecycle — data collection, feature engineering, model selection, evaluation, and deployment with monitoring.</p>
-							<div class="tags"><span>pandas</span><span>scikit-learn</span><span>Flask</span></div>
-							<ul class="actions"><li><a href="https://github.com/amarpoji/Regression_ML_EndtoEnd" target="_blank" rel="noopener" class="button primary">Repo</a></li></ul>
-						</article>
-
-					</div>
-				</section>
-
-				<!-- ============ SKILLS ============ -->
-				<section id="skills" class="section">
-					<header class="major main reveal">
-						<h2>Core Skills</h2>
-						<p>Tools and domains I work in daily</p>
-					</header>
-					<div class="features">
-						<article class="reveal">
-							<span class="icon solid fa-code"></span>
-							<div class="content">
-								<h3>Languages</h3>
-								<p><span>Python</span> <span class="sep">·</span> <span>SQL</span> <span class="sep">·</span> <span>JavaScript/TypeScript</span> <span class="sep">·</span> <span>Bash</span></p>
-							</div>
-						</article>
-						<article class="reveal">
-							<span class="icon solid fa-language"></span>
-							<div class="content">
-								<h3>ML / AI</h3>
-								<p><span>NLP &amp; LLMs</span> <span class="sep">·</span> <span>RAG Systems</span> <span class="sep">·</span> <span>Multi-Agent AI</span> <span class="sep">·</span> <span>scikit-learn</span> <span class="sep">·</span> <span>Arabic NLP</span></p>
-							</div>
-						</article>
-						<article class="reveal">
-							<span class="icon solid fa-cogs"></span>
-							<div class="content">
-								<h3>MLOps</h3>
-								<p><span>DVC</span> <span class="sep">·</span> <span>MLflow</span> <span class="sep">·</span> <span>Docker</span> <span class="sep">·</span> <span>Prefect</span> <span class="sep">·</span> <span>GitHub Actions</span></p>
-							</div>
-						</article>
-						<article class="reveal">
-							<span class="icon solid fa-database"></span>
-							<div class="content">
-								<h3>Data &amp; Infra</h3>
-								<p><span>PostgreSQL</span> <span class="sep">·</span> <span>Qdrant</span> <span class="sep">·</span> <span>OpenSearch</span> <span class="sep">·</span> <span>FastAPI</span> <span class="sep">·</span> <span>Streamlit</span></p>
-							</div>
-						</article>
-					</div>
-				</section>
-
-				<!-- ============ CERTIFICATIONS ============ -->
-				<section id="certifications" class="section">
-					<header class="major main reveal">
-						<h2>Certifications</h2>
-						<p>Continuous learning, verified</p>
-					</header>
-					<div class="certs">
-						<div class="cert-row reveal">
-							<span class="icon solid fa-certificate"></span>
-							<div class="cert-body">
-								<h3>Deep Learning Specialization</h3>
-								<div class="issuer">DeepLearning.AI · Coursera</div>
-							</div>
-							<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-						</div>
-						<div class="cert-row reveal">
-							<span class="icon solid fa-certificate"></span>
-							<div class="cert-body">
-								<h3>Machine Learning Specialization</h3>
-								<div class="issuer">Stanford Online · Coursera</div>
-							</div>
-							<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-						</div>
-						<div class="cert-row reveal">
-							<span class="icon solid fa-certificate"></span>
-							<div class="cert-body">
-								<h3>Microsoft Azure AI Fundamentals (AI-900)</h3>
-								<div class="issuer">Microsoft</div>
-							</div>
-							<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-						</div>
-						<div class="cert-row reveal">
-							<span class="icon solid fa-certificate"></span>
-							<div class="cert-body">
-								<h3>Multi-AI Agent Systems with CrewAI</h3>
-								<div class="issuer">DeepLearning.AI</div>
-							</div>
-							<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
-						</div>
-					</div>
-					<p class="cert-note">Note: verification links are placeholders — send me your certificate URLs and I'll wire them in.</p>
-				</section>
-
-				<!-- ============ ABOUT ============ -->
-				<section id="about" class="section">
-					<header class="major main reveal">
-						<h2>About Me</h2>
-						<p>The story behind the code</p>
-					</header>
-					<div class="about-grid">
-						<div class="reveal">
-							<p>
-								My path is unusual: a background in <b>Arabic literature and Islamic theology</b> led me to data science —
-								and it turns out classical text analysis, isnad authentication, and poetry meter are excellent training
-								for <b>NLP, information retrieval, and trustworthy AI</b>.
-							</p>
-							<p>
-								I build systems that respect language — hybrid retrieval engines that understand Arabic morphology,
-								multi-agent pipelines that only cite verified sources, and MLOps foundations that keep models reproducible
-								and observable in production.
-							</p>
-							<p>Currently focused on <b>Arabic NLP, RAG, and agentic AI</b> — and always learning.</p>
-						</div>
-						<div class="quote-card reveal">
-							<div class="arabic" dir="rtl">العِلْمُ نُورٌ</div>
-							<p>"Knowledge is light."</p>
-							<div class="trans">— a principle I apply to every model, dataset, and pipeline I build.</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- ============ CONTACT ============ -->
-				<section id="contact" class="section reveal">
-					<div class="contact-cta">
-						<h2>Let's Build Something Intelligent</h2>
-						<p>Looking for a data scientist / AI engineer who can ship Arabic NLP, RAG, and agentic systems? Let's talk.</p>
-						<ul class="actions">
-							<li><a href="mailto:amar.fauzie.dev@gmail.com" class="button primary"><i class="fas fa-envelope"></i>&nbsp; amar.fauzie.dev@gmail.com</a></li>
-							<li><a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" class="button ghost">LinkedIn</a></li>
-						</ul>
-					</div>
-				</section>
-
-				<!-- Footer -->
-				<footer id="footer-main">
-					<div class="foot-arabic" dir="rtl">شكرًا لزيارتكم</div>
-					<p>&copy; 2026 Muhammad Amar Fauzie Bin Ismail — Built with a love for language &amp; machines.<br />
-					Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a> (Editorial).</p>
-				</footer>
-
+		<!-- Skills -->
+		<section id="skills">
+			<header class="major reveal">
+				<h2>Core Skills</h2>
+				<p>Tools and domains I work in daily</p>
+			</header>
+			<div class="skills-grid">
+				<div class="skill-card reveal">
+					<span class="icon solid fa-code"></span>
+					<h3>Languages</h3>
+					<ul><li><b>Python</b></li><li><b>SQL</b></li><li><b>JavaScript / TS</b></li><li><b>Bash</b></li></ul>
+				</div>
+				<div class="skill-card reveal">
+					<span class="icon solid fa-language"></span>
+					<h3>ML / AI</h3>
+					<ul><li><b>NLP &amp; LLMs</b></li><li><b>RAG Systems</b></li><li><b>Multi-Agent AI</b></li><li><b>Arabic NLP</b></li></ul>
+				</div>
+				<div class="skill-card reveal">
+					<span class="icon solid fa-cogs"></span>
+					<h3>MLOps</h3>
+					<ul><li><b>DVC</b></li><li><b>MLflow</b></li><li><b>Docker</b></li><li><b>Prefect</b></li><li><b>GitHub Actions</b></li></ul>
+				</div>
+				<div class="skill-card reveal">
+					<span class="icon solid fa-database"></span>
+					<h3>Data &amp; Infra</h3>
+					<ul><li><b>PostgreSQL</b></li><li><b>Qdrant</b></li><li><b>OpenSearch</b></li><li><b>FastAPI</b></li><li><b>Streamlit</b></li></ul>
+				</div>
 			</div>
-		</div>
+		</section>
+
+		<!-- Certifications -->
+		<section id="certifications">
+			<header class="major reveal">
+				<h2>Certifications</h2>
+				<p>Continuous learning, verified</p>
+			</header>
+			<div class="certs">
+				<div class="cert-row reveal">
+					<span class="icon solid fa-certificate"></span>
+					<div class="cert-body">
+						<h3>Deep Learning Specialization</h3>
+						<div class="issuer">DeepLearning.AI · Coursera</div>
+					</div>
+					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
+				</div>
+				<div class="cert-row reveal">
+					<span class="icon solid fa-certificate"></span>
+					<div class="cert-body">
+						<h3>Machine Learning Specialization</h3>
+						<div class="issuer">Stanford Online · Coursera</div>
+					</div>
+					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
+				</div>
+				<div class="cert-row reveal">
+					<span class="icon solid fa-certificate"></span>
+					<div class="cert-body">
+						<h3>Microsoft Azure AI Fundamentals (AI-900)</h3>
+						<div class="issuer">Microsoft</div>
+					</div>
+					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
+				</div>
+				<div class="cert-row reveal">
+					<span class="icon solid fa-certificate"></span>
+					<div class="cert-body">
+						<h3>Multi-AI Agent Systems with CrewAI</h3>
+						<div class="issuer">DeepLearning.AI</div>
+					</div>
+					<a class="verify" href="#" target="_blank" rel="noopener">Verify <i class="fas fa-external-link-alt"></i></a>
+				</div>
+			</div>
+			<p class="cert-note">Note: verification links are placeholders — send me your certificate URLs and I'll wire them in.</p>
+		</section>
+
+		<!-- About -->
+		<section id="about">
+			<header class="major reveal">
+				<h2>About Me</h2>
+				<p>The story behind the code</p>
+			</header>
+			<div class="about-grid">
+				<div class="reveal">
+					<p>
+						My path is unusual: a background in <b>Arabic literature and Islamic theology</b> led me to data science —
+						and it turns out classical text analysis, isnad authentication, and poetry meter are excellent training
+						for <b>NLP, information retrieval, and trustworthy AI</b>.
+					</p>
+					<p>
+						I build systems that respect language — hybrid retrieval engines that understand Arabic morphology,
+						multi-agent pipelines that only cite verified sources, and MLOps foundations that keep models reproducible
+						and observable in production.
+					</p>
+					<p>Currently focused on <b>Arabic NLP, RAG, and agentic AI</b> — and always learning.</p>
+				</div>
+				<div class="quote-card reveal">
+					<div class="arabic" dir="rtl">العِلْمُ نُورٌ</div>
+					<p>"Knowledge is light."</p>
+					<div class="trans">— a principle I apply to every model, dataset, and pipeline I build.</div>
+				</div>
+			</div>
+		</section>
 
 	</div>
 
-	<script>
-		/* ============ SIDEBAR (mobile) ============ */
-		const sidebar = document.getElementById('sidebar');
-		function toggleSidebar() { sidebar.classList.toggle('active'); document.body.classList.toggle('sidebar-open'); }
-		function closeSidebar() { sidebar.classList.remove('active'); document.body.classList.remove('sidebar-open'); }
+	<!-- ============ FOOTER ============ -->
+	<footer id="footer">
+		<div class="inner">
+			<div class="foot-arabic" dir="rtl">شكرًا لزيارتكم</div>
+			<h2 style="font-size:1.9rem; text-transform:uppercase; letter-spacing:0.26em;">Get in Touch</h2>
+			<p style="color:var(--fg-light); max-width:38em; margin:0 auto;">Looking for a data scientist / AI engineer who can ship Arabic NLP, RAG, and agentic systems? Let's talk.</p>
+			<ul class="actions" style="justify-content:center; margin-top:1.8rem;">
+				<li><a href="mailto:amar.fauzie.dev@gmail.com" class="button accent"><i class="fas fa-envelope"></i>&nbsp; amar.fauzie.dev@gmail.com</a></li>
+			</ul>
+			<div class="contact-cols">
+				<div class="col">
+					<h4>Location</h4>
+					<p><i class="fas fa-map-marker-alt icon"></i>Kuala Lumpur, Malaysia<br />Remote-ready</p>
+				</div>
+				<div class="col">
+					<h4>Email</h4>
+					<p><i class="fas fa-envelope icon"></i><a href="mailto:amar.fauzie.dev@gmail.com">amar.fauzie.dev@gmail.com</a></p>
+				</div>
+				<div class="col">
+					<h4>Social</h4>
+					<div class="social">
+						<a href="https://github.com/amarpoji" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+						<a href="https://linkedin.com/in/amar-fauzie-53aa77334" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>&copy; 2026 Muhammad Amar Fauzie Bin Ismail — Built with a love for language &amp; machines.<br />
+				Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a> (Massively).</p>
+			</div>
+		</div>
+	</footer>
 
-		/* ============ ACTIVE MENU HIGHLIGHT ============ */
+	<script>
+		/* ============ MOBILE MENU ============ */
+		const overlay = document.getElementById('navOverlay');
+		function openMenu() { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+		function closeMenu() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+		/* ============ ACTIVE NAV ============ */
 		const sections = ['projects', 'skills', 'certifications', 'about', 'contact'];
 		const navLinks = document.querySelectorAll('.nav-link');
 		window.addEventListener('scroll', () => {
 			let current = '';
 			sections.forEach(id => {
 				const el = document.getElementById(id);
-				if (el && window.scrollY >= el.offsetTop - 160) current = id;
+				if (el && window.scrollY >= el.offsetTop - 200) current = id;
 			});
 			navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
 		}, { passive: true });
@@ -740,7 +677,7 @@
 		}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 		document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-		/* ============ REMOVE PRELOAD CLASS ============ */
+		/* ============ REMOVE PRELOAD ============ */
 		document.body.classList.remove('is-preload');
 	</script>
 </body>
