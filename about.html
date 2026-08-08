@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Me - Amar Fauzie</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary-container": "#b7b5af",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-surface-variant": "#554243",
+          "tertiary-fixed-dim": "#c9c6c0",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "on-background": "#151c27",
+          "on-surface": "#151c27",
+          "inverse-primary": "#ffb2ba",
+          "on-tertiary-fixed-variant": "#474742",
+          "inverse-surface": "#2a313d",
+          "primary-fixed": "#ffd9dc",
+          "tertiary-container": "#484742",
+          "on-primary": "#ffffff",
+          "outline-variant": "#dcc0c2",
+          "secondary": "#5d5e61",
+          "on-error-container": "#93000a",
+          "primary": "#630b22",
+          "on-secondary-fixed-variant": "#454749",
+          "background": "#f9f9ff",
+          "surface-tint": "#a13b4d",
+          "surface-container-highest": "#dce2f3",
+          "surface": "#f9f9ff",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#1c1c18",
+          "primary-fixed-dim": "#ffb2ba",
+          "on-primary-fixed": "#400011",
+          "surface-container-high": "#e2e8f8",
+          "secondary-fixed": "#e2e2e5",
+          "surface-container": "#e7eefe",
+          "on-secondary-container": "#636467",
+          "secondary-fixed-dim": "#c6c6c9",
+          "surface-variant": "#dce2f3",
+          "surface-dim": "#d3daea",
+          "surface-bright": "#f9f9ff",
+          "secondary-container": "#e2e2e5",
+          "outline": "#897173",
+          "on-primary-container": "#ff98a5",
+          "on-primary-fixed-variant": "#822437",
+          "on-secondary-fixed": "#1a1c1e",
+          "primary-container": "#822437",
+          "surface-container-low": "#f0f3ff",
+          "tertiary": "#31312c",
+          "tertiary-fixed": "#e5e2db",
+          "inverse-on-surface": "#ebf1ff",
+          "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "sm": "12px",
+          "lg": "48px",
+          "margin-desktop": "64px",
+          "base": "8px",
+          "xl": "80px",
+          "margin-mobile": "16px",
+          "gutter": "24px",
+          "xs": "4px",
+          "md": "24px"
+        },
+        "fontFamily": {
+          "body-md": ["Hanken Grotesk"],
+          "headline-sm": ["EB Garamond"],
+          "display-lg": ["EB Garamond"],
+          "body-sm": ["Hanken Grotesk"],
+          "data-mono": ["JetBrains Mono"],
+          "label-caps": ["JetBrains Mono"],
+          "display-lg-mobile": ["EB Garamond"],
+          "headline-md": ["EB Garamond"],
+          "body-lg": ["Hanken Grotesk"]
+        },
+        "fontSize": {
+          "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+          "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+          "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "data-mono": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+          "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+          "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+  body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col relative pb-16 md:pb-0">
+<!-- TopAppBar (Desktop) -->
+<header class="hidden md:flex bg-background fixed top-0 w-full z-50 border-b border-outline/20 justify-between items-center px-margin-desktop h-16">
+  <a class="flex items-center gap-4" href="index.html">
+    <span class="material-symbols-outlined text-primary">terminal</span>
+    <span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">AF</span>
+  </a>
+  <nav class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="projects.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="skills.html">Skills</a>
+<a class="text-primary font-bold transition-colors duration-300" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="mailto:amarpoji1999@gmail.com">Contact</a>
+  </nav>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden bg-background fixed top-0 w-full z-50 border-b border-outline/20 flex justify-between items-center px-margin-mobile h-16">
+  <a class="flex items-center gap-4" href="index.html">
+    <span class="material-symbols-outlined text-primary">terminal</span>
+    <span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">AF</span>
+  </a>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-xl pb-24 flex-grow w-full">
+<section class="mb-xl text-center">
+  <p class="font-label-caps text-label-caps text-primary-container mb-2 uppercase tracking-widest text-xs">The story &bull; About Me</p>
+  <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg mb-base font-semibold text-primary-container">The story behind the code.</h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A narrative of curiosity, unexpected paths, and the persistent drive to build things that matter.</p>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl relative">
+  <aside class="hidden md:block md:col-span-3 pt-lg">
+    <div class="sticky top-32">
+      <h3 class="font-label-caps text-label-caps text-primary-container mb-4 border-b border-outline-variant pb-2">Chapters</h3>
+      <ul class="space-y-4">
+        <li><a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors" href="#journey"><span class="material-symbols-outlined text-sm">explore</span><span class="font-data-mono text-data-mono">01. Journey</span></a></li>
+        <li><a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors" href="#experience"><span class="material-symbols-outlined text-sm">work</span><span class="font-data-mono text-data-mono">02. Experience</span></a></li>
+        <li><a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-container transition-colors" href="#languages"><span class="material-symbols-outlined text-sm">language</span><span class="font-data-mono text-data-mono">03. Languages</span></a></li>
+      </ul>
+    </div>
+  </aside>
+  <article class="md:col-span-8 lg:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.04)] text-center">
+    <div class="mb-12" id="journey">
+      <h2 class="font-headline-md text-headline-md text-on-surface mb-6 font-semibold">My Journey</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-4 leading-relaxed text-left">
+        My journey has taken a path I never expected. During high school, I was in the science stream, spending countless nights studying subjects like Additional Mathematics, Physics, Chemistry, and Biology. I worked hard to achieve a good result in my SPM, believing that I would eventually become a doctor or an engineer. After receiving my SPM results, my mother invited me to perform Umrah with my eldest brother. That journey changed the direction of my life. During my stay in Madinah, I met someone named Ahmad at a grocery store near the Prophet&rsquo;s Mosque. We could barely communicate at that time because I did not understand Arabic, and he did not speak my language. However, we stayed in contact through WhatsApp, and I relied on Google Translate to understand our conversations. That small connection sparked a new curiosity within me. I started learning Arabic seriously, and my dream shifted from becoming an engineer or doctor to mastering the Arabic language and its sciences. Years later, I earned a Diploma in Arabic Language and Literature from UniSZA and completed my Bachelor's degree in Theology at the Islamic University of Madinah. But my story did not end there. My curiosity for technology returned, bringing me back to mathematics and problem-solving. I discovered data science as a bridge between my analytical background and my passion for technology. Since then, I have been continuously learning through courses in machine learning, deep learning, and artificial intelligence, exploring how technology can be used to solve real-world problems. My journey has always been about learning, adapting, and connecting different fields together. From Arabic and Islamic studies to AI and data science, I believe every experience has shaped the person I am today.
+      </p>
+    </div>
+    <div class="mb-12" id="experience">
+      <h2 class="font-headline-md text-headline-md text-on-surface mb-6 font-semibold border-t border-outline-variant pt-12">Professional Experience</h2>
+      <div class="space-y-6 text-left">
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">Hajj Pilgrimage Guide / Mutawwif</h3>
+          <p class="font-label-caps text-label-caps text-primary-container mb-2 uppercase tracking-widest text-xs">Tabung Haji 2024 &ndash; 2026</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">Communicated religious, logistical, and safety information clearly to pilgrims from diverse backgrounds; managed coordination and problem-solving in a high-pressure, time-sensitive environment.</p>
+        </div>
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">Company Representative / Exhibitor</h3>
+          <p class="font-label-caps text-label-caps text-primary-container mb-2 uppercase tracking-widest text-xs">Siiru &mdash; Hajj &amp; Umrah Forum, King Salman Int'l Convention Centre</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">Presented company offerings and communicated with diverse audiences in a professional, public-facing exhibition environment.</p>
+        </div>
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">Committee Member (AJK)</h3>
+          <p class="font-label-caps text-label-caps text-primary-container mb-2 uppercase tracking-widest text-xs">Nadi Pencinta Madinah</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">Co-developed educational modules and organized cultural activities and historical tours across Makkah, Madinah, and Taif for Malaysian students.</p>
+        </div>
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">President</h3>
+          <p class="font-label-caps text-label-caps text-primary-container mb-2 uppercase tracking-widest text-xs">ARCOM, International Islamic University Malaysia 2019&ndash;2020</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">Led a student organization focused on Arabic communication; organized competitions and represented the group in Arabic debate and public speaking.</p>
+        </div>
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">President</h3>
+          <p class="font-label-caps text-label-caps text-primary-container mb-2 uppercase tracking-widest text-xs">Sejahtera, Universiti Sultan Zainal Abidin 2018</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">Led organizational activities and built the organization's social media and digital communication presence.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mb-12" id="languages">
+      <h2 class="font-headline-md text-headline-md text-on-surface mb-6 font-semibold border-t border-outline-variant pt-12">Languages</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-left">I am fluent in Malay, English, and Arabic.</p>
+    </div>
+  </article>
+  <aside class="hidden lg:block lg:col-span-2 pt-lg">
+    <div class="sticky top-32">
+      <div class="w-full aspect-[3/4] bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant relative">
+        <img src="assets/about.png" alt="Abstract circuit and architectural structure" class="w-full h-full object-cover opacity-80">
+      </div>
+      <p class="font-data-mono text-data-mono text-on-surface-variant mt-4 text-right">Fig. 1 &mdash; Structure</p>
+    </div>
+  </aside>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest fixed bottom-0 w-full z-50 border-t border-outline/20 flex justify-around items-center px-4 py-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16" href="index.html">
+  <span class="material-symbols-outlined text-2xl">home</span>
+  <span class="text-[10px] font-label-caps uppercase tracking-tighter mt-0.5">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16" href="projects.html">
+  <span class="material-symbols-outlined text-2xl">code</span>
+  <span class="text-[10px] font-label-caps uppercase tracking-tighter mt-0.5">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:scale-90 transition-all duration-200 w-16" href="skills.html">
+  <span class="material-symbols-outlined text-2xl">psychology</span>
+  <span class="text-[10px] font-label-caps uppercase tracking-tighter mt-0.5">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary rounded-full p-2 active:scale-90 transition-all duration-200 w-16" href="about.html">
+  <span class="material-symbols-outlined text-2xl filled">history_edu</span>
+  <span class="text-[10px] font-label-caps uppercase tracking-tighter mt-0.5">About</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full bg-primary-container text-on-primary mt-auto py-12 px-margin-mobile md:px-margin-desktop">
+  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center">
+    <div>
+      <div class="font-headline-md text-headline-md mb-2">AF</div>
+      <p class="font-body-sm text-body-sm opacity-80">© 2026 Amar Fauzie. Bridging Tradition &amp; Innovation.</p>
+    </div>
+    <div class="flex gap-8">
+      <a class="font-label-caps text-label-caps text-on-primary/90 hover:text-on-primary transition-colors" href="https://github.com/amarpoji" target="_blank" rel="noopener">GitHub</a>
+      <a class="font-label-caps text-label-caps text-on-primary/90 hover:text-on-primary transition-colors" href="https://www.linkedin.com/in/amar-fauzie-53aa77334/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="font-label-caps text-label-caps text-on-primary/90 hover:text-on-primary transition-colors" href="mailto:amarpoji1999@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
