@@ -357,9 +357,17 @@ def about():
   <h2 class="font-display font-extrabold tracking-tight text-4xl md:text-5xl max-w-2xl leading-tight mb-16">From Madinah to machine learning<span class="text-accent">.</span></h2>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
     <div class="space-y-8 text-muted leading-relaxed text-sm md:text-base">
-      <p>My journey has taken a path I never expected. During high school I was in the science stream — Additional Mathematics, Physics, Chemistry, Biology — certain I would become a doctor or an engineer one day. After SPM, my mother invited me to perform Umrah with my eldest brother. That journey changed the direction of my life.</p>
-      <p>In Madinah I met someone named Ahmad at a grocery store near the Prophet&rsquo;s Mosque. We could barely communicate — I knew no Arabic, he knew no Malay — but we stayed in contact through WhatsApp, with Google Translate carrying our conversations. That small connection sparked a new curiosity in me. I started learning Arabic seriously, and my dream shifted from medicine to language and its sciences.</p>
-      <p>Years later I earned a Diploma in Arabic Language and Literature from UniSZA, then a Bachelor&rsquo;s in Theology from the Islamic University of Madinah. The story didn&rsquo;t end there: curiosity pulled me back to mathematics and problem-solving, and I discovered data science — the bridge between my analytical background and my love of technology. Since then I&rsquo;ve studied machine learning, deep learning, and AI, exploring how technology can solve real-world problems.</p>
+      <p>My journey has taken a few turns I definitely didn&rsquo;t see coming.</p>
+      <p>Back in high school, I was firmly in the science stream, studying Additional Mathematics, Physics, Chemistry, and Biology. I was pretty sure I would end up becoming a doctor or an engineer. At the time, my future seemed nicely planned out.</p>
+      <p>Then, after SPM, my mother offered me the opportunity to perform Umrah. I ended up going with my eldest brother. I went to Madinah expecting a spiritual journey. I didn&rsquo;t expect it to completely change the direction of my life.</p>
+      <p>While I was there, I met someone named Ahmad at a small grocery store near the Prophet&rsquo;s Mosque. There was just one tiny problem. I didn&rsquo;t speak Arabic, and he didn&rsquo;t speak Malay. 😄</p>
+      <p>Somehow, we still managed to become friends. We kept in touch through WhatsApp, with Google Translate doing most of the heavy lifting in our conversations.</p>
+      <p>That simple friendship sparked something in me. I became curious about Arabic, started learning it seriously, and before I knew it, the dream of becoming a doctor or engineer had quietly been replaced by a new interest in language and its sciences.</p>
+      <p>A few years later, I earned a Diploma in Arabic Language and Literature from UniSZA, followed by a Bachelor&rsquo;s degree in Theology from the Islamic University of Madinah.</p>
+      <p>But apparently, my journey wasn&rsquo;t done changing direction.</p>
+      <p>My old love for mathematics and problem-solving eventually came back, and this time I discovered data science. It felt like finding a missing piece of the puzzle, something that connected my analytical background with my growing interest in technology.</p>
+      <p>Since then, I&rsquo;ve been diving into machine learning, deep learning, and AI, experimenting with different ideas and building projects along the way.</p>
+      <p>Looking back, it&rsquo;s funny how one trip to Madinah, one random encounter at a grocery store, and a lot of Google Translate somehow led me from dreaming about medicine to building AI systems.</p>
     </div>
     <div class="space-y-6">
       <div class="border border-paper3 rounded-sm p-6 md:p-8 bg-paper2">
