@@ -79,7 +79,7 @@ PROJECTS = [
         "index": "02",
         "name": "Master Advisor",
         "sub": "LangGraph Multi-Agent Pipeline",
-        "desc": "An autonomous agent workflow that researches, evaluates, and compiles real master's degree programs and their associated scholarship opportunities, based on user criteria.",
+        "desc": "This is a personal project I built to automate my search for a master\u2019s program and, more importantly, a university that can fully sponsor my studies.\n\nThe story actually starts with my mom. She kept asking me, \u201cSo, have you found a university yet?\u201d She wanted me to continue my studies and told me that my father was willing to pay for it since I don\u2019t have a stable income yet.\n\nBut I didn\u2019t really want to depend on my family for this. I told her I would try to find a fully funded opportunity instead.\n\nThat\u2019s when I thought, why not automate the whole search?\n\nI built an AI-powered research system that searches for master\u2019s programs, universities, and funding opportunities based on my criteria. While working on it, I discovered LangGraph, which introduced me to a different way of building AI agents. Instead of the agent simply stopping after one search, LangGraph lets the system loop back and forth between agents, creating loops where the system can go back, refine its search, and improve its results.\n\nSo what started as my mom repeatedly asking me to find a university turned into a pretty interesting AI project.",
         "href": LINKS["advisor"],
         "stack": ["LangGraph", "LangChain", "OpenAI", "Tavily", "SQLAlchemy"],
     },
@@ -246,6 +246,12 @@ def projects():
             '<span class="px-2.5 py-1 bg-paper3 font-mono text-[11px] rounded">' + s + "</span>"
             for s in p["stack"]
         )
+        paras = "".join(
+            '<p class="mt-4 text-sm md:text-base text-muted leading-relaxed">'
+            + para.strip()
+            + "</p>"
+            for para in p["desc"].split("\n\n")
+        )
         if p.get("img"):
             preview = f'<img src="{p["img"]}" alt="{p["img_alt"]}" class="w-full h-full object-cover">'
         else:
@@ -260,7 +266,7 @@ def projects():
         <span class="font-mono text-xs text-muted">{p["sub"]}</span>
       </div>
       <h3 class="font-display text-2xl md:text-3xl font-bold tracking-tight">{p["name"]}</h3>
-      <p class="mt-4 text-sm md:text-base text-muted leading-relaxed grow">{p["desc"]}</p>
+      <div class="grow">{paras}</div>
       <div class="flex flex-wrap gap-2 mt-6">{chips}</div>
       <a href="{href}" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 font-mono text-sm text-accent hover:text-ink transition-colors w-fit">View repository <span aria-hidden="true">↗</span></a>
     </div>
